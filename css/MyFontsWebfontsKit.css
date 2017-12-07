@@ -1,0 +1,28 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3467101, 2017-10-18T18:19:24-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Novecentosanswide-Medium by Synthview
+ * URL: https://www.myfonts.com/fonts/synthview/novecento/wide-medium/
+ * Copyright: Copyright &#x00A9; 2013 by Jan Tonellato. All rights reserved.
+ * Licensed pageviews: Unlimited
+ * 
+ * 
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3467101
+ * 
+ * © 2017 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/34e75d");
+
+  
+@font-face {font-family: 'Novecentosanswide-Medium';src: url('webfonts/34E75D_0_0.eot');src: url('webfonts/34E75D_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/34E75D_0_0.woff2') format('woff2'),url('webfonts/34E75D_0_0.woff') format('woff'),url('webfonts/34E75D_0_0.ttf') format('truetype');}
+ 
