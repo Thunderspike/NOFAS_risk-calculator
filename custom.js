@@ -2,7 +2,7 @@ $( document ).ready(function() {
 
 	$('[data-toggle="tooltip"]').tooltip(); /*tooltip*/
 
-	$("i.fa-sun-o").hover(
+	$("i.fa-sun-o").hover( /*disables tooltip from fa-icon for mouse users*/
 		function(){
 			setTimeout(function(){
 		  		$('.fa-sun-o').tooltip('disable');
@@ -18,20 +18,38 @@ $( document ).ready(function() {
 		}
 	);
 
-	$('i.fa-sun-o').click(function(){
+	$('i.fa-sun-o').click(function(){ /*reloads application on click onto the sun icon*/
 		location.reload();
 		window.scrollTo(0,0);
 	});
 
-	var totalScore = 0; /*total score of app, not used yet*/
+	$('.assessmentEnabler').hide();  /*shows and hids take assessment modal footer*/
+	$('#validationCheckbox').on('click', function(){ 
+	    if ( $(this).is(':checked') ) {
+	    	$('.buttonAccess').removeAttr('disabled');
+	        $('.assessmentEnabler').slideDown();
+	    } 
+	    else {
+	        $('.buttonAccess').attr('disabled','disabled');
+	        $('.assessmentEnabler').slideUp();
+	    }
+	});
 
-	var page1Score = 0;
+	var totalScore = 0; /*scores*/
+	var resultString = '';
+
+	var page1Score = 0; 
 	var page2Score = 0;
 	var page3Score = 0;
 
 	var p1TopError;
 	var p2TopError;
 	var p2TopError;
+
+
+	var set1 = 1; 
+	var set2 = 1;
+	var set3 = 1;
 
 	var currentQ8Choices = []; /*dynamic array of choices made in q8*/
 	var q8Info; /*if q8 is empty or not*/
@@ -40,6 +58,8 @@ $( document ).ready(function() {
 
 	/*Home away button*/
 	$( "#homeAway" ).click(function() {
+		ga('set', 'metric5', 1);
+		ga('send', 'event', {'eventCategory': 'assessment', 'eventAction': 'assessmentStart', 'eventLabel': 'Started Assessment'}); //Google Analy
 	    $( "#home-Container" ).hide();
 	    $('#firstMultiple-Container').show();
 	    window.scrollTo(0,0);
@@ -105,7 +125,7 @@ $( document ).ready(function() {
 	   					'. The weight is '+$(question).attr('name')+
 	   					'. Total score: '+ (q8Score * $(question).attr('name')) );
    					page1Score += parseInt(q8Score * $(question).attr('name'));
-   					console.log('Score of Page ' +page1Score)
+   					//console.log('Score of Page ' +page1Score)
 	   			} else {
 	   				$('#a8').text(q8Info);
 	   			}
@@ -169,6 +189,14 @@ $( document ).ready(function() {
 			//console.log(x.top + 'px - ' + p1TopError)
 			window.scrollTo(0, ( x.top - 94 ) );
 		} else if(filledElements == 14){
+
+			if (set1 == 1){ //send only 1ce
+			/*Google Analytics Data */
+				ga('set', 'dimension1', page1Score); 
+				ga('set', 'metric1', 1);
+				ga('send', 'event', {'eventCategory': 'assessment', 'eventAction': 'page1Completion', 'eventLabel': page1Score});
+			}; set1 = 0;
+
 			$('#firstMultiple-Container').hide();
 			$('#secondMultpile-Container').show();
 			window.scrollTo(0,0);
@@ -232,6 +260,14 @@ $( document ).ready(function() {
 
 	/*Page3 display button from modal*/
 	$("#page3checkpoint").click(function(){
+
+		if (set2 == 1){ //send only 1ce
+			/*Google Analytics Data */
+			ga('set', 'dimension2', page2Score);
+			ga('set', 'metric2', 1);
+			ga('send', 'event', {'eventCategory': 'assessment', 'eventAction': 'page2Completion', 'eventLabel': ('page2Score - ' + page2Score)});
+		} set2 = 0;
+
 		$("#secondMultpile-Container").hide();
 		$('#thirdMultiple-Container').show();
 		window.scrollTo(0,0);
@@ -259,7 +295,6 @@ $( document ).ready(function() {
 					$( ("#a"+tempSel) ).text('Your answer is invalid');
 				}
 				if (q24selected > 0){
-					console.log('where am I?');
 					$( ("#a"+tempSel) ).text( 'Your value is: '+ q24Score +
 						'. The weight is '+ $(question).attr('name') +
 						'. Total score: ' + (q24Score * $(question).attr('name')));
@@ -341,7 +376,14 @@ $( document ).ready(function() {
 
 	/*results display button*/
 	$("#displayResults, #selectScore").click(function(){
+		
+		/*Google Analytics Data */
+		ga('set', 'dimension3', page3Score);
+		ga('set', 'metric3', 1);
+		ga('send', 'event', {'eventCategory': 'assessment', 'eventAction': 'page3Completion', 'eventLabel': ('page3Score - '+ page3Score)});
+
 		$('#thirdMultiple-Container').hide();
+		resultString = '';
 		var totalScore = $('.scorePicker').val() ? $('.scorePicker').val() : (page1Score + page2Score + page3Score);
 		//totalScore = 26;
 		//console.log("The score should be " + ($('.scorePicker').val() ? $('.scorePicker').val() : (page1Score + page2Score + page3Score)));
@@ -360,43 +402,43 @@ $( document ).ready(function() {
 		});
 		if(totalScore >= 0 && totalScore <= 25){ // Almost No Risk
 			colorTheme = colorTheme  ? colorTheme : '#1ed579'; 
-			$('.risk-title').text('Almost No Risk');
+			$('.risk-title').text('Almost No Risk'); resultString = 'Almost No Risk';
 			$('.risk-title').css("text-shadow", "0px 0px  #000000");
 			rDescription.css({'color': 'white','background': 'linear-gradient(32.7deg, '+colorTheme+' , #1bc46f, '+ colorTheme +')'});
 			rDescription.text('It is not likely that your child will have an FASD. Abstain from alcohol for the remainder of your pregnancy and take prenatal vitamins.');
 		} else if (totalScore >= 26 && totalScore <= 50){ // Very Low Risk
 			colorTheme = colorTheme  ? colorTheme : '#4eba35'
-			$('.risk-title').text('Very Low Risk');
+			$('.risk-title').text('Very Low Risk'); resultString = 'Very Low Risk';
 			$('.risk-title').css("text-shadow", "0px 0px  #000000");
 			rDescription.css({'color': 'white', 'background': 'linear-gradient(32.7deg, '+colorTheme+' , #45a82f, '+ colorTheme +')'});
 			rDescription.text('There is a very low chance your child will have FASD or other effects. Abstain from alcohol for the remainder of your pregnancy');
 		} else if (totalScore >= 51 && totalScore <= 75){ // Low Risk
 			colorTheme = colorTheme  ? colorTheme : '#f9f12a';
-			$('.risk-title').text('Low Risk');
+			$('.risk-title').text('Low Risk'); resultString = 'Low Risk';
 			$('.risk-title').css("text-shadow", "0px 1.09px  #000000");
 			rDescription.css({'color': 'black', 'background': 'linear-gradient(32.7deg, '+colorTheme+' , #fcf428, '+ colorTheme +')'});
 			rDescription.text("There is a small chance your child could have some effects. Avoid increasing your child's risk by abstaining from alcohol for the remainder of your pregnancy.");
 		} else if (totalScore >= 76 && totalScore <= 100){ //Low-Moderate Risk
 			colorTheme = colorTheme  ? colorTheme : '#e0a021';
-			$('.risk-title').text('Low-Moderate Risk');
+			$('.risk-title').text('Low-Moderate Risk'); resultString = 'Low-Moderate Risk'
 			$('.risk-title').css("text-shadow", "0px 0px  #000000");
 			rDescription.css({'color': 'white','background': 'linear-gradient(32.7deg, '+colorTheme+' , #d1941d, '+ colorTheme +')'});
 			rDescription.text("There is a low-moderate chance your child will develop FASD. Avoid increasing your child's risk by abstaining from alcohol for the remainder of your pregnancy.");
 		} else if (totalScore >= 101 && totalScore <= 120){ // Moderate Risk
 			colorTheme = colorTheme  ? colorTheme : '#c6590b';
-			$('.risk-title').text('Moderate Risk');
+			$('.risk-title').text('Moderate Risk'); resultString = 'Moderate Risk';
 			$('.risk-title').css("text-shadow", "0px 0px  #000000");
 			rDescription.css({'color': 'white','background': 'linear-gradient(32.7deg, '+colorTheme+' , #b55009, '+ colorTheme +')'});
 			rDescription.text("There is a moderate risk your child will develop FASD. Avoid increasing your child's risk by abstaining from alcohol for the remainder of your pregnancy. Speak to your provider if you are concerned about your alcohol intake. Seek help if you are unable to stop drinking on your own.");
 		} else if (totalScore >= 121 && totalScore <= 140){ // Moderate-Increased Risk
 			colorTheme = colorTheme  ? colorTheme : '#e85151'; 
-			$('.risk-title').text('Moderate-Increased Risk');
+			$('.risk-title').text('Moderate-Increased Risk'); resultString = 'Moderate-Increased Risk';
 			$('.risk-title').css("text-shadow", "0px 0px  #000000");
 			rDescription.css({'color': 'white','background': 'linear-gradient(32.7deg, '+colorTheme+' , #d64848, '+ colorTheme +')'});
 			rDescription.text("There is a moderate-increased risk your child will develop FASD. Avoid increasing your child's risk by abstaining from alcohol for the remainder of your pregnancy. Speak to your provider if you are concerned about your alcohol intake or need help connecting to resources. Seek help if you are unable to stop drinking on your own.");
 		} else if (totalScore >= 141 && totalScore <= 160){ // Increased Risk
 			colorTheme = colorTheme  ? colorTheme : '#ce180f';
-			$('.risk-title').text('Increased Risk');
+			$('.risk-title').text('Increased Risk'); resultString = 'Increased Risk';
 			$('.risk-title').css("text-shadow", "0px 0px  #000000");
 			rDescription.css({'color': 'white','background': 'linear-gradient(32.7deg, '+colorTheme+' , #c6140b, '+ colorTheme +')'});
 			rDescription.text("Your child is at increased risk for FASD. Speak to your provider about your alcohol intake and connecting to resources. Avoid increasing your child's risk by abstaining from alcohol for the remainder of your pregnancy. Learn about the FASD signs and symptoms and how you can get a proper diagnosis for your child, if necessary. Seek help if you are unable to stop drinking on your own.");
@@ -419,6 +461,12 @@ $( document ).ready(function() {
 			}
 		)
 		$('#resultScreen-Container').show();
+
+		/*Google Analytics Data */
+		ga('set', 'dimension4', totalScore);
+		ga('set', 'metric4', 1);
+		ga('send', 'event', {'eventCategory': 'assessment', 'eventAction': 'assessmentCompletion', 'eventLabel' : (totalScore + ': ' + resultString)});
+
 	}); 
 
 });

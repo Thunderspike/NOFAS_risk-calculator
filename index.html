@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>NOFAS</title>
+    <title>NOFAS Alcohol & Pregnancy Risk Calculator</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109822802-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111597048-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -17,40 +17,72 @@
         gtag('config', 'UA-109822802-1');
     </script>
 
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-109822802-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
     
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <!-- <link rel="stylesheet" type="text/css" href="css/MyFontsWebfontsKit.css"> -->
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
-    <link href="css/custom.css" rel="stylesheet">
-    <!-- FA -->
-    <link href="css/FA/css/font-awesome.min.css" rel="stylesheet">
-
+    
+    <!-- Part1 - Part1 - Config & Body -->
+    <style> 
+        span[id^=a]{ /* hides individual score */
+            /**/display: none;
+        } span[id^=page]{ /*hides total score for the page */
+            /**/display: none;
+        } .devFeat { /* Color and Score picker for the Result page*/
+            /**/display:none;
+        } #home-Container { /* ----------------- Home Screen ------- */
+            /*display: none;*/
+        } #firstMultiple-Container {
+            /**/display: none;
+        } #secondMultpile-Container {
+            /**/display: none;
+        } #thirdMultiple-Container {
+            /**/display: none;
+        } #resultScreen-Container { /*results*/
+            /**/display: none;
+        }
+        body{padding-top:4.75em;max-width:100%;width:100%;height:100%;overflow-x:hidden;background:#fff;background:linear-gradient(#fff,#cecece)}h1,h2,h3,h4,h5,h6{color:#000}li{padding-top:1em}.jumbotron{font-size:17px}
+    </style>
+    <!-- <link href="custom.css" rel="stylesheet"> -->
+    
     <!-- jQuery -->
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport bug workaround -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <!-- Placeholder Images -->
-    <script src="js/holder.min.js"></script>
-    <!-- Custom Logic -->
-    <script src="js/custom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- Custom JavaScript Logic -->
+    <script src="custom.js" async></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <link rel="icon" href="https://i.imgur.com/6CalTKV.png" type="image/gif" sizes="16x16">
+
+    <!-- FA -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 <body>
+    
+
     <!-- Navigation -->
     <nav class="well well-sm navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container navbarIntegrity">
             <div class="nav navbar-nav navbar-left">
                 <li>
                     <a href='https://www.nofas.org/'>
-                        <img class="img-responsive NofasLogo" src="./img/NOFAS-shadow.png" alt="NOFAS Image" style="max-width: 118px !important;">
+                        <img class="img-responsive NofasLogo" src="https://i.imgur.com/TMnQFk0.png" alt="NOFAS Image" style="max-width: 118px !important;">
                     </a>
                 </li>
             </div>
@@ -62,29 +94,40 @@
         </div>
     </nav>
 
+    <!-- Part2 - Navbar Style -->
+    <style>
+        nav.navbar-inverse{background-color:#fff;height:6.325em;margin:-.8em 0!important}div.navbar-right{margin-top:-.275em!important;margin-right:2em}#home{color:#fff;border:right;margin-top:.2em;font-size:2.75em!important;text-shadow:0 .04em 4px #3d3d3d}.NofasLogo{margin-top:-2.4em}#home:hover{color:#000!important;text-shadow:0 .04em 12px #fff}.tooltip-inner{width:9vw!important;background-color:#000;color:#FFF;opacity:1!important;font-size:15px}
+    </style>
+
     <!-- Home Container  --> 
     <div class="container-fluid homeTainer" id="home-Container">
+        
         <div id='pageTitleContainer'>
             <h2 class='col-sm-12 text-center pageTitleH2'>
-                <p id='title1'>NOFAS Prenatal FASD</p> 
+                <p id='title1'>Alcohol and Pregnancy</p> 
                 <br> <p id='toBlack'>Risk Calculator</p>
             </h2>
        </div>
+       <!-- Part3 - Title Style -->
+       <style>
+            .homeTainer{padding:4em;margin-bottom:-1em}#pageTitleContainer,#pageTitleContainerAlt,#pageTitleContainerAlt2{color:#3F51B5!important;margin-top:-.8em;margin-bottom:0!important;font-family:font-family: Anton,sans-serif!important;font-style:bold;font-size:3em;letter-spacing:.04em}#pageTitleContainerAlt,#pageTitleContainerAlt2{display:none}.pageTitleH2{color:#3F51B5!important;font-family:Anton,sans-serif;line-height:.01em!important;margin-bottom:.5em}#toBlack{line-height:2;color:#000;font-family:'Open Sans',sans-serif;font-weight:700}
+       </style>
        <div class='container' id='pageTitleContainerAlt'>
            <h2 class='col-sm-12 text-center pageTitleH2'>
-                <p id='title1'>NOFAS Prenatal </p>
-                <br> <p id='title2'>FASD</p> 
+                <p id='title1'>Alcohol and</p>
+                <br> <p id='title2'>Pregnancy</p> 
                 <br> <p id='toBlack'>Risk Calculator</p>
             </h2>
        </div>
        <div class='container' id='pageTitleContainerAlt2'>
            <h2 class='col-sm-12 text-center pageTitleH2'>
-                <p id='title1'>NOFAS</p>
-                <br> <p id='title3'>Prenatal</p>
-                <br> <p id='title2'>FASD</p> 
+                <p id='title1'>Alcohol</p>
+                <br> <p id='title3'>and</p>
+                <br> <p id='title2'>Pregnancy</p> 
                 <br> <p id='toBlack'>Risk Calculator</p>
             </h2>
        </div>
+
        <div class='container-fluid homeTent'>
             <div class='row homeContentInner'> 
                 <div class='col-sm-4 leftCont'> 
@@ -102,16 +145,19 @@
                 <div class='col-sm-4 midCont'> 
                     <div class='forPadding midHome'>
                         <h3 class='text-center note'>
-                            <i class="fa fa-exclamation" aria-hidden="true"></i>&nbsp;Note
+                            Note<i class="fa fa-exclamation" aria-hidden="true"></i>
                         </h3>
                         <p class='midTextHolder'>
-                            This risk assessment is only intended for women who have consumed any amount of alcohol at some point during their pregnancy. If you have abstained from alcohol while trying to conceive and during your pregnancy, your child is not at risk for a FASD. 
+                            This assessment is only intended for women who have consumed any amount of alcohol at some point during their pregnancy. If you have abstained from alcohol while trying to conceive and during your pregnancy, your child is not at risk for a FASD.
+                        </p>
+                        <p class='midTextHolder1'>
+                            This assessment is a screening tool designed to connect you to more information and resources. Please speak to a medical professional about any concerns that you may have regarding your pregnancy and/or substance use. 
                         </p>
                         <div class="text-center homeButton">
-                            <button class="btn btn-info homeBtn btn-lg" data-toggle="modal" data-target="#infoModal">Take Assessment</button>
+                            <button class="btn btn-info homeBtn btn-lg" data-toggle="modal" onclick="ga('send', 'event', {'eventCategory': 'assessment', 'eventAction': 'asessmentAuthentication', 'eventLabel': 'Assessment Authentication Start'});" data-target="#infoModal">Take Assessment</button>
                         </div>
                         <div class="text-center homeButtonAlt">
-                            <button class="btn btn-info homeBtnAlt btn-lg" data-toggle="modal" data-target="#infoModal">
+                            <button class="btn btn-info homeBtnAlt btn-lg" onclick="ga('send', 'event', {'eventCategory': 'assessment', 'eventAction': 'asessmentAuthentication', 'eventLabel': 'Assessment Authentication Start'});" data-toggle="modal" data-target="#infoModal">
                                 <p>Take</p>
                                 <br><p>Assessment</p>
                             </button>
@@ -123,7 +169,7 @@
                         <p class='nonTransparent'>If you are pregnant and have consumed alcohol or are currently drinking during your pregnancy, complete this quiz to:
                         </p> 
                         <ul class="homePageList">
-                          <li class="i1"><i class="fa fa-circle fa-fw" aria-hidden="true"></i> Learn the risk of your child having a FASD</li>
+                          <li class="i1"><i class="fa fa-circle fa-fw" aria-hidden="true"></i> Learn about the possibility of your child having FASD</li>
                           <li class="i2"><i class="fa fa-circle fa-fw" aria-hidden="true"></i> Discover your healthy lifestyle habits and learn what lifestyle changes you can make during your pregnancy</li>
                           <li class="i3"><i class="fa fa-circle fa-fw" aria-hidden="true"></i> Connect to resources and gain information to better understand risk factors for FASD</li>
                         </ul>
@@ -131,14 +177,19 @@
                 </div>
             </div>
         </div>
+
+        <!-- Part4 - Home Content Style -->
+        <style>
+            .homeTent{margin-top:2em!important;font-family:Helvetica,sans-serif;color:#444}.homeContentInner{margin-top:5em}.forPadding{background-color:#fff;padding:2em;border-radius:.7em}.leftHome,.midHome,.rightHome{font-size:1.2em!important;padding-top:2em;line-height:1.4em;background-color:#fff;display:table-cell!important}.leftHomeContainer{margin-top:4em;margin-bottom:2.55em}#leftHomeP2{padding-top:1em}.note{color:#3F51B5!important;font-family:Anton,sans-serif!important;font-style:bold;font-size:1.6em;margin-top:.05em!important}.fa-exclamation{padding-left:.04em}.midTextHolder,.midTextHolder1{padding-top:1.2em!important;color:#000!important}.homeButton,.homeButtonAlt{padding-top:2.4em}.homeBtn,.homeBtnAlt{text-transform:uppercase;font-weight:700!important;background-color:#3F51B5!important;position:relative!important;display:inline-block!important;padding:10px!important;text-align:center;border:#3F51B5}.homeButtonAlt{display:none}.homeBtnAlt{line-height:.6em;padding-top:1em!important}.homeBtn:hover,.homeBtnAlt:hover{background-color:#000!important}.rightHome{padding-bottom:4.4em!important;border:#000}.homePageList{margin-top:1.75em;list-style:none;padding-left:0;line-height:1.3em}.i1{margin-top:-2em}li[class^='i']{vertical-align:left}.fa-circle{color:#383838;font-size:.6em!important;margin-right:.5em;vertical-align:middle}
+        </style>
     </div>
 
     <!-- first Multiple Page -->
     <div class="container-fluid" id="firstMultiple-Container" style="padding-top: 1.2em"> 
         
-            <div class="col-sm-2"></div>
-            <div class='col-sm-8'><h1>Demographics & Medical History</h1>
-            
+        <div class="col-sm-2"></div>
+        <div class='col-sm-8'>
+            <h1>Demographics & Medical History</h1>
             <div class="footer-blurb-choice-1" style="height:35px; border:none; transform: rotate(76deg); width: 177%; z-index: -1"></div> 
             <div class="jumbotron container-fluid" style='color: black;'>
                 <table class="table">  <!--style='background: linear-gradient(45deg, red, blue);' -->
@@ -375,6 +426,10 @@
                 <p class="text-center"><button class='btn btn-info btn-lg' style="padding: 10px 20px;" id='checkValidity1'>Next >></button></p>
             </div>
         </div>
+        <!-- Part6 - Assessment Style -->
+        <style>
+            .footer-blurb-choice-1{background:#fff;background:-webkit-linear-gradient(45deg,#fff,#fff,#2E79A6,#ecb3ff,#39909E,#1a66ff,,#fff,#fff);background:-o-linear-gradient(45deg,#fff,#fff,#2E79A6,#ecb3ff,#39909E,#1a66ff,#fff,#fff);background:-moz-linear-gradient(45deg,#fff,#fff,#2E79A6,#ecb3ff,#39909E,#1a66ff,#fff,#fff);background:linear-gradient(45deg,#fff,#fff,#2E79A6,#ecb3ff,#39909E,#1a66ff,#fff,#fff);width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}.error{box-shadow:0 0 5px 1px red}.questionError{color:red}.no-error{box-shadow:none;color:#000}
+        </style>
     </div> 
 
     <!-- second Multiple Page -->
@@ -641,6 +696,11 @@
         </div>
     </div> 
     
+    <!-- Part7 - Result Style -->
+    <style>
+        .resultTitle>h2,.risk-title{font-weight:700}#risk-box-2>p>b,.resourceLinks>div{text-decoration:underline}#risk-description{color:#fff}.resultContent{color:#000;background-color:transparent}.resultInfo{background:linear-gradient(#fff,#fefeff,#fff)!important;border-radius:.7em}.resultTitle{margin-top:-1em;margin-bottom:-.5em}#risk-title{margin-bottom:2em;font-size:large}.risk-title{font-size:1.2em;background:linear-gradient(#fff,#fff,#fff,#fff,#fffefe)!important}.riskContainer{margin-top:0}#risk-description{border-radius:.8em;background-color:#FFF;padding:1.2em;text-align:left}#risk-border{margin-top:1.2em;border:5px solid #FFF;border-radius:8px;padding:8px 8px 8px 25px;border-top-style:none;border-bottom-style:none}#risk-box-1,#risk-box-2{border:5px double #FFF;outline:#FFF solid 7px}#risk-box-1{margin-top:2em;padding:8px}.box1Title{margin-top:1.2em}.riskList{font-size:19px}#risk-box-2{padding:8px 9px 8px 8px;margin-top:7px}#risk-box-2>p{padding-left:.8em}.resourceLinks{margin-top:1.5em!important}.resourceLinks>h2{text-align:left;margin-top:1em}.list{line-height:1.5em;font-size:20px}.sources{background-color:#fff!important;border-radius:.7em;margin-top:2em}.sources>h2{margin-bottom:1.2em}
+    </style>
+    
     <!-- result screen-->
     <div class="container-fluid" id="resultScreen-Container">
         <div class="jumbotron container resultContent">
@@ -656,9 +716,11 @@
                         <button class='btn btn-info btn-lg' style="padding: 10px 20px;" id="selectScore">Select Score</button>
                     </div>
                 </div>
+                <!--
                 <div class='text-center col-sm-12 resultTitle'>
                     <h2>FASD RISK CALCULATOR FEEDBACK</h2>
                 </div>
+            -->
                 <div class='container-fluid text-center col-sm-12' id='risk-title'>
                     <h2>
                         <span class='risk-title'>RISK AMOUNT HERE</span>
@@ -706,6 +768,7 @@
                             <p><a class='list-group-item' href="https://findtreatment.samhsa.gov/locator/home">SAMHSA Substance Use Treatment Locator</a></p>
                             <p><a class='list-group-item' href="https://www.aa.org/?Media=PlayFlash">Alcoholics Anonymous</a></p>
                             <p><a class='list-group-item' href="https://ncadv.org/learn-more/resources">National Coalition against Domestic Violence Resources</a></p>
+                            <p><a class='list-group-item' href="http://cifasd.org/">Collaborative Initiative on Fetal Alcohol Spectrum Disorders</a></p>
                         </div>
                     </div>
                 </div>
@@ -722,7 +785,19 @@
                     Bailey, B.A. & Sokol, R.J. (2011). Prenatal Alcohol Exposure and Miscarriage, Stillbirth, Preterm Delivery, SIDS. <i>Alcohol Research & Health</i>, 34(1), 86-91.
                 </blockquote>
                 <blockquote>
-                    Bhuvaneswar, C.G., Chang, G.C., Epstein, L.A., & Stern, T.A. (2007). Alcohol Use During Pregnancy: Prevalence and Impact. <i>Primary Care Companion to The Journal of Clinical Psychiatry</i>. 9(6), 455–460.
+                    Bhuvaneswar, C.G., Chang, G.C., Epstein, L.A., & Stern, T.A. (2007). Alcohol Use During Pregnancy: Prevalence and Impact. <i>Primary Care Companion to The Journal of Clinical Psychiatry</i>, 9(6), 455–460.
+                </blockquote>
+                <blockquote>
+                    Ceccanti, M., et al. (2014). Maternal Risk Factors for Fetal Alcohol Spectrum Disorders in Province in Italy. <i>Drug and Alcohol Dependance</i>, 145, 201-208.
+                </blockquote>
+                <blockquote>
+                   Charness, M.E., Riley, E.P., Sowell, E.R. (2016). Drinking During Pregnancy and the Developing Brain: Is Any Amount Safe? <i>Trends in Cognitive Sciences</i>, 20(2), 80-82.
+                </blockquote>
+                <blockquote>
+                   Coles, C.D., et al. (2015). Dose and Timing of Prenatal Alcohol Exposure and Maternal Nutritional Supplements: Developmental Effects on 6-Month-Old Infants. <i>Maternal and Child Health Journal</i>, 20(2), 19(12), 2605-2614. 
+                </blockquote>
+                <blockquote>
+                   Lebel, C., et al. (2012). A Longitudinal Study of the Long-term Consequences of Drinking During Pregnancy: Heavy in Utero Alcohol Exposure Disrupts the Normal Processes of Brain Development. <i>The Journal of Neuroscience: The Official Journal of the Study of Neuroscience</i>, 32(44), 15243-15251. 
                 </blockquote>
                 <blockquote>
                     May, P. A. & Gossage, J.P. (2011).Maternal Risk Factors for Fetal Alcohol Spectrum Disorders: Not as Simple As it Might Seem. <i>Alcohol Research & Health, NIH: National Institute on Alcohol Abuse and Alcoholism</i>, 34(1), 15-26.
@@ -753,32 +828,53 @@
                 </div>
         	</div>
         </div>  
+        <!-- Part8 - Footer Style -->
+        <style>
+            .small-print{margin-top:2em;background-color:#242729;color:#FFF;padding:30px 0}footer a{color:#fff!important;text-decoration:undeline}footer a:hover{text-decoration:underline}.footer-content-1,.footer-content-2{display:flex;justify-content:space-between}
+        </style>
 	</footer>
 
 </body>
 
 <!-- Home Modal -->
 <div id="infoModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <!-- Part5 - Home Modal + Checkbox Style -->
+    <style>
+        .disclaimer{font-size:2.2em}.checkBoxObject{padding-top:2em;padding-bottom:2em}.checkBoxLabel{display:block;position:relative;cursor:pointer;user-select:none}.checkBoxLabel input{position:absolute;opacity:0}.checkmark{position:absolute;top:.5em;left:-1em;height:25px;width:25px;background-color:#eee;border:1.5px solid #000}.checkBoxLabel:hover input~.checkmark{background-color:#ccc}.checkBoxLabel input:checked~.checkmark{background-color:#2196F3}.checkmark:after{content:"";position:absolute;display:none}.checkBoxLabel input:checked~.checkmark:after{display:block}.checkBoxLabel .checkmark:after{left:8.3px;top:0;width:.5em;height:1.45em;border:solid #fff;border-width:0 3px 3px 0;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}#validationCheckbox{margin-top:1em}
+    </style>
+    <div class="modal-dialog modal-lg">
     <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-title">Disclaimers & Consent</h3>
+                <h3 class="modal-title disclaimer">Disclaimer</h3>
             </div>
             <div class="modal-body">
-                <h4>Medical Disclaimer:</h4>
-                <p>The content in this health assessment is based off scientific evidence. This health risk calculator is not intended to diagnose or guarantee that an individual will have a certain condition. Please see a physician or qualified health care provider for a complete health assessment and diagnosis. </p>
-                <h4>Accuracy of Scoring: </h4>
-                <p>While there are known factors that increase an individual’s risk for alcohol-related birth defects, there is still more research to be done. Beyond lifestyle factors, it is suggested that genetics can impact the risk for a child to be born with FASD, but no genome wide association has been found. Similarly, alcohol metabolism varies between individuals and pregnancy affects that metabolism in a variety of ways. The only way to completely prevent an alcohol-related birth defect is for a woman to abstain from drinking during her pregnancy. </p>
-                <h4>Anonymity of Data: </h4>
-                <p>All information shared during this survey is anonymous; however responses will be recorded for future analysis. The survey consists of 28 of questions and should take about 15-20 minutes. If you have any concerns about sharing information or data storage please contact <a href="https://www.nofas.org/">information@nofas.org</a></p>
+                <p style="padding-top: 0.3em">The information contained in this website and provided by the alcohol and pregnancy risk calculator is intended for informational purposes only, and should not be construed as medical or healthcare advice on any matter.</p>
+                <h4 style="padding-top: 0.3em">No Medical Advice Intended:</h4>
+                <p style="padding-top: 0.1em">This website includes general health information about conceptual, prenatal, and neonatal issues. Such content is for informational purposes only and may not reflect the most current developments. These informational materials are not intended, and should not be taken, as medical or healthcare advice on any particular set of facts or circumstances. You should contact a medical or healthcare professional for advice on specific issues. </p>
+                <p>The alcohol and pregnancy risk calculator gives a generalized estimate based on the responses you provide. The information may not be accurate for an individual person. There may be specific factors that are not measured. Therefore, any information provided to you should not be used to make healthcare decisions or changes. Please discuss your circumstances with your healthcare provider(s). </p>
+                <p>The National Organization on Fetal Alcohol Syndrome, Inc. (<a href="https://www.nofas.org/">NOFAS</a>) disclaims all liability in respect to actions taken or not taken based on any or all the contents of this site to the fullest extent permitted by law. Do not act or refrain from acting upon this information without seeking professional advice.</p>
+                <p>The Site contains links to other sites operated by third parties, and NOFAS do not guarantee the representation about any Third Party Site or the accuracy of its content.</p>
+                <h4 style="padding-top: 0.3em">Copyright Notice:  </h4>
+                <p style="padding-top: 0.1em">The copyright in these pages (including without limitation all text, graphics and computer code relating thereto or associated therewith) and all other intellectual property and proprietary rights therein belongs to NOFAS and all rights are reserved.</p>
+                <p>By using this application and its content, you accept and agree to be bound by the following terms and conditions.</p>
+                <p>You agree to indemnify, defend, and hold NOFAS, its directors, officers, affiliates, agents, and licensors harmless from and against any and all liability, losses, damages, and cost, including without limitation, reasonable attorney’s fees and costs, incurred in connection with any claim arising from your use of this application or its content.</p>
+                <hr>
+                <div class="row checkBoxObject">
+                    <!-- col-xs-8 --><div class="col-xs-1"></div>  
+                    <label class="checkbox-inline col-xs-10 checkBoxLabel">
+                        <input type="checkbox" id="validationCheckbox" value="option1"> 
+                        You agree to indemnify, defend, and hold NOFAS, its directors, officers, affiliates, agents, and licensors harmless from and against any and all liability, losses, damages, and cost, including without limitation, reasonable attorney’s fees and costs, incurred in connection with any claim arising from your use of this application or its content.
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
             </div>
-            <div class="modal-footer">
-                <div class="col-sm-12 row">
-                    <div class="col-sm-2"></div>
-                    <button type="button" class="btn btn-danger col-sm-3" data-dismiss="modal" style="margin-right: 7em">I Don't Agree</button>
-                    <button type="button" class="btn btn-info col-sm-3" data-dismiss="modal" id='homeAway'>I Agree</button>
+            <div class="modal-footer assessmentEnabler">
+                <div class="col-xs-12 row">
+                    <div class="col-xs-2"></div>
+                    <button type="button" class="btn btn-danger col-xs-3 buttonAccess" data-dismiss="modal" id='b1' style="margin-right: 7em">Return</button>
+                    <button type="button" class="btn btn-info col-xs-3 buttonAccess" data-dismiss="modal" id='homeAway'>Proceed</button>
                 </div>
             </div>
         </div>
@@ -838,7 +934,11 @@
             </div>
             <div class="modal-body">
                 <h4>Important Note:</h4>
-                <p>This calculator does not guarantee a certain risk level for your child having FASD because physiological functions vary person to person. This information is intended to encourage you to make healthy decisions for the remainder of your pregnancy and connect to resources if you need help to stop drinking while pregnant.</p>
+                <p>
+                    This calculator does not guarantee a certain risk level for your child having FASD because physiological functions vary person to person. This information is intended to encourage you to make healthy decisions for the remainder of your pregnancy and connect to resources if you need help to stop drinking while pregnant.</p>
+                <p>
+                    Speak to a medical professional about any concerns that you may have regarding your pregnancy.
+                </p>
             </div>
             <div class="modal-footer">
                 <div class="col-sm-4"></div>
@@ -847,6 +947,12 @@
         </div>
     </div>
 </div>
+
+
+<!-- Part9 - Screen Compatibility Style -->
+<style>
+@media(max-width:553px){.footer-content-1,.footer-content-2{display:block!important}}@media(max-width:376px){#lineBreak::before{content:'\A'}}@media (max-width:452px){#pageTitleContainerAlt{display:block!important}#pageTitleContainer{display:none!important}#title2{line-height:1.6em}#toBlack{line-height:1.2em;margin-top:-.4em}}@media (max-width:374px){.risk-title{font-size:.8em!important}}@media (max-width:376px){#pageTitleContainerAlt{display:none!important}#pageTitleContainerAlt2{display:block!important;margin-top:-.3em}#title3{line-height:1.4em}#title2{margin-top:-.7em}#toBlack{padding-top:.5em!important}}@media (max-width:992px){.resultLogo{display:none}}@media (max-width:768px){nav>div>div>a>i{margin-top:-5px!important}#risk-title{margin-top:2em!important}#giveMarginBelow768px{margin-top:1.5em!important}.leftCont,.midCont,.rightCont{padding-top:1.2em!important}.homeTent{margin-top:-6em!important}.NofasLogo{margin-top:-2.3em!important;margin-left:-7em!important}.navbarIntegrity{display:flex;justify-content:space-between}.fa-sun-o{margin-top:.3em!important;margin-right:-3em!important}}@media only screen and (max-width:991px){.homeButton{display:none}.homeButtonAlt{display:block}}@media (max-width:767px) and (min-width:425px){.homeButtonAlt{display:none}.homeButton{display:block}}@media(max-width:391px){#b1{margin-right:4em!important}}
+</style>
 
 
 </html>
