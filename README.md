@@ -3,4 +3,4 @@ In the process of deploying to the main site:
 
 	https://nofas-prototype.herokuapp.com/ - user’s prototype 
 	
-	https://nofas-test.herokuapp.com/ - developer’s prototype for administrator 
+	
