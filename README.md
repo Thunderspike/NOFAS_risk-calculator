@@ -1,6 +1,5 @@
-An application for the NOFAS organization that surveys women regarding their drinking and other problems during their pregnancy, and displays warning and recommended information based on their choices. The application uses JavaScript to validate user choices, with the help of jQuery, and display a range of result choices scaled on the score of the user’s survey. 
-In the process of deploying to the main site:  
+An application for the NOFAS organization that surveys women regarding their drinking and other problems during their pregnancy, and displays cautioning information and follow up actions based on their choices. The application uses JavaScript to validate user choices, with the help of jQuery, and display a range of result choices weighted by the scaled by the weight of the questions. 
 
-	https://nofas-prototype.herokuapp.com/ - user’s prototype 
+Link to the application: https://nofas-prototype.herokuapp.com/
 	
 	
