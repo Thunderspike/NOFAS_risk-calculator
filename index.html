@@ -1,135 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>NOFAS Alcohol & Pregnancy Risk Calculator</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-111597048-1"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111597048-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-      gtag('config', 'UA-109822802-1');
+        gtag('config', 'UA-109822802-1');
     </script>
 
     <!-- Google Analytics -->
     <script>
-      (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        (i[r] =
-          i[r] ||
-          function () {
-            (i[r].q = i[r].q || []).push(arguments);
-          }),
-          (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        'script',
-        'https://www.google-analytics.com/analytics.js',
-        'ga'
-      );
-      ga('create', 'UA-109822802-1', 'auto');
-      ga('send', 'pageview');
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-109822802-1', 'auto');
+        ga('send', 'pageview');
     </script>
     <!-- End Google Analytics -->
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Anton"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans"
-      rel="stylesheet"
-    />
+    
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <!-- Bootstrap Core CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
-
+    
     <!-- Part1 - Part1 - Config & Body -->
-    <style>
-      span[id^='a'] {
-        /* hides individual score */
-        /**/
-        display: none;
-      }
-      span[id^='page'] {
-        /*hides total score for the page */
-        /**/
-        display: none;
-      }
-      .devFeat {
-        /* Color and Score picker for the Result page*/
-        /**/
-        display: none;
-      }
-      #home-Container {
-        /* ----------------- Home Screen ------- */
-        /*display: none;*/
-      }
-      #firstMultiple-Container {
-        /**/
-        display: none;
-      }
-      #secondMultpile-Container {
-        /**/
-        display: none;
-      }
-      #thirdMultiple-Container {
-        /**/
-        display: none;
-      }
-      #resultScreen-Container {
-        /*results*/
-        /**/
-        display: none;
-      }
-      body {
-        padding-top: 4.75em;
-        max-width: 100%;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden;
-        background: #fff;
-        background: linear-gradient(#fff, #cecece);
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        color: #000;
-      }
-      li {
-        padding-top: 1em;
-      }
-      .jumbotron {
-        font-size: 17px;
-      }
+    <style> 
+        span[id^=a]{ /* hides individual score */
+            /**/display: none;
+        } span[id^=page]{ /*hides total score for the page */
+            /**/display: none;
+        } .devFeat { /* Color and Score picker for the Result page*/
+            /**/display:none;
+        } #home-Container { /* ----------------- Home Screen ------- */
+            /*display: none;*/
+        } #firstMultiple-Container {
+            /**/display: none;
+        } #secondMultpile-Container {
+            /**/display: none;
+        } #thirdMultiple-Container {
+            /**/display: none;
+        } #resultScreen-Container { /*results*/
+            /**/display: none;
+        }
+        body{padding-top:4.75em;max-width:100%;width:100%;height:100%;overflow-x:hidden;background:#fff;background:linear-gradient(#fff,#cecece)}h1,h2,h3,h4,h5,h6{color:#000}li{padding-top:1em}.jumbotron{font-size:17px}
     </style>
     <!-- <link href="custom.css" rel="stylesheet"> -->
-
+    
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -137,2088 +65,894 @@
     <script src="custom.js" async></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-      crossorigin="anonymous"
-    ></script>
-
-    <link
-      rel="icon"
-      href="https://i.imgur.com/6CalTKV.png"
-      type="image/gif"
-      sizes="16x16"
-    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <link rel="icon" href="https://i.imgur.com/6CalTKV.png" type="image/gif" sizes="16x16">
 
     <!-- FA -->
-    <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-  </head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
 
-  <body>
+<body>
+    
+
     <!-- Navigation -->
     <nav class="well well-sm navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container navbarIntegrity">
-        <div class="nav navbar-nav navbar-left">
-          <li>
-            <a href="https://www.nofas.org/">
-              <img
-                class="img-responsive NofasLogo"
-                src="https://i.imgur.com/TMnQFk0.png"
-                alt="NOFAS Image"
-                style="max-width: 118px !important;"
-              />
-            </a>
-          </li>
+        <div class="container navbarIntegrity">
+            <div class="nav navbar-nav navbar-left">
+                <li>
+                    <a href='https://www.nofas.org/'>
+                        <img class="img-responsive NofasLogo" src="https://i.imgur.com/TMnQFk0.png" alt="NOFAS Image" style="max-width: 118px !important;">
+                    </a>
+                </li>
+            </div>
+            <div class="nav navbar-nav navbar-right text-right">
+                <li>
+                    <i class="fa fa-sun-o fa-2x fa-fw text-right" aria-hidden="true" id="home" data-toggle="tooltip" data-placement="bottom" title="Click this icon if you wish to restart the NOFAS Risk Calculator"></i> 
+                </li>
+            </div>
         </div>
-        <div class="nav navbar-nav navbar-right text-right">
-          <li>
-            <i
-              class="fa fa-sun-o fa-2x fa-fw text-right"
-              aria-hidden="true"
-              id="home"
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Click this icon if you wish to restart the NOFAS Risk Calculator"
-            ></i>
-          </li>
-        </div>
-      </div>
     </nav>
 
     <!-- Part2 - Navbar Style -->
     <style>
-      nav.navbar-inverse {
-        background-color: #fff;
-        height: 6.325em;
-        margin: -0.8em 0 !important;
-      }
-      div.navbar-right {
-        margin-top: -0.275em !important;
-        margin-right: 2em;
-      }
-      #home {
-        color: #fff;
-        border: right;
-        margin-top: 0.2em;
-        font-size: 2.75em !important;
-        text-shadow: 0 0.04em 4px #3d3d3d;
-      }
-      .NofasLogo {
-        margin-top: -2.4em;
-      }
-      #home:hover {
-        color: #000 !important;
-        text-shadow: 0 0.04em 12px #fff;
-      }
-      .tooltip-inner {
-        width: 9vw !important;
-        background-color: #000;
-        color: #fff;
-        opacity: 1 !important;
-        font-size: 15px;
-      }
+        nav.navbar-inverse{background-color:#fff;height:6.325em;margin:-.8em 0!important}div.navbar-right{margin-top:-.275em!important;margin-right:2em}#home{color:#fff;border:right;margin-top:.2em;font-size:2.75em!important;text-shadow:0 .04em 4px #3d3d3d}.NofasLogo{margin-top:-2.4em}#home:hover{color:#000!important;text-shadow:0 .04em 12px #fff}.tooltip-inner{width:9vw!important;background-color:#000;color:#FFF;opacity:1!important;font-size:15px}
     </style>
 
-    <!-- Home Container  -->
+    <!-- Home Container  --> 
     <div class="container-fluid homeTainer" id="home-Container">
-      <div id="pageTitleContainer">
-        <h2 class="col-sm-12 text-center pageTitleH2">
-          <p id="title1">Alcohol and Pregnancy</p>
-          <br />
-          <p id="toBlack">Risk Calculator</p>
-        </h2>
-      </div>
-      <!-- Part3 - Title Style -->
-      <style>
-        .homeTainer{padding:4em;margin-bottom:-1em}#pageTitleContainer,#pageTitleContainerAlt,#pageTitleContainerAlt2{color:#3F51B5!important;margin-top:-.8em;margin-bottom:0!important;font-family:font-family: Anton,sans-serif!important;font-style:bold;font-size:3em;letter-spacing:.04em}#pageTitleContainerAlt,#pageTitleContainerAlt2{display:none}.pageTitleH2{color:#3F51B5!important;font-family:Anton,sans-serif;line-height:.01em!important;margin-bottom:.5em}#toBlack{line-height:2;color:#000;font-family:'Open Sans',sans-serif;font-weight:700}
-      </style>
-      <div class="container" id="pageTitleContainerAlt">
-        <h2 class="col-sm-12 text-center pageTitleH2">
-          <p id="title1">Alcohol and</p>
-          <br />
-          <p id="title2">Pregnancy</p>
-          <br />
-          <p id="toBlack">Risk Calculator</p>
-        </h2>
-      </div>
-      <div class="container" id="pageTitleContainerAlt2">
-        <h2 class="col-sm-12 text-center pageTitleH2">
-          <p id="title1">Alcohol</p>
-          <br />
-          <p id="title3">and</p>
-          <br />
-          <p id="title2">Pregnancy</p>
-          <br />
-          <p id="toBlack">Risk Calculator</p>
-        </h2>
-      </div>
+        
+        <div id='pageTitleContainer'>
+            <h2 class='col-sm-12 text-center pageTitleH2'>
+                <p id='title1'>Alcohol and Pregnancy</p> 
+                <br> <p id='toBlack'>Risk Calculator</p>
+            </h2>
+       </div>
+       <!-- Part3 - Title Style -->
+       <style>
+            .homeTainer{padding:4em;margin-bottom:-1em}#pageTitleContainer,#pageTitleContainerAlt,#pageTitleContainerAlt2{color:#3F51B5!important;margin-top:-.8em;margin-bottom:0!important;font-family:font-family: Anton,sans-serif!important;font-style:bold;font-size:3em;letter-spacing:.04em}#pageTitleContainerAlt,#pageTitleContainerAlt2{display:none}.pageTitleH2{color:#3F51B5!important;font-family:Anton,sans-serif;line-height:.01em!important;margin-bottom:.5em}#toBlack{line-height:2;color:#000;font-family:'Open Sans',sans-serif;font-weight:700}
+       </style>
+       <div class='container' id='pageTitleContainerAlt'>
+           <h2 class='col-sm-12 text-center pageTitleH2'>
+                <p id='title1'>Alcohol and</p>
+                <br> <p id='title2'>Pregnancy</p> 
+                <br> <p id='toBlack'>Risk Calculator</p>
+            </h2>
+       </div>
+       <div class='container' id='pageTitleContainerAlt2'>
+           <h2 class='col-sm-12 text-center pageTitleH2'>
+                <p id='title1'>Alcohol</p>
+                <br> <p id='title3'>and</p>
+                <br> <p id='title2'>Pregnancy</p> 
+                <br> <p id='toBlack'>Risk Calculator</p>
+            </h2>
+       </div>
 
-      <div class="container-fluid homeTent">
-        <div class="row homeContentInner">
-          <div class="col-sm-4 leftCont">
-            <div class="rounded forPadding leftHome">
-              <div class="leftHomeContainer">
-                <p>
-                  The U.S. Surgeon General states, “It is simply in the best
-                  interest for a woman to not drink alcohol.”
-                </p>
-                <p id="leftHomeP2">
-                  This health assessment will estimate how your pregnancy
-                  lifestyle decisions and personal history impact your child’s
-                  risk of having a fetal alcohol spectrum disorder (FASD).
-                </p>
-              </div>
+       <div class='container-fluid homeTent'>
+            <div class='row homeContentInner'> 
+                <div class='col-sm-4 leftCont'> 
+                    <div class='rounded forPadding leftHome'>
+                        <div class='leftHomeContainer'>
+                            <p>
+                                The U.S. Surgeon General states, “It is simply in the best interest for a woman to not drink alcohol.”
+                            </p>
+                            <p id='leftHomeP2'>
+                                This health assessment will estimate how your pregnancy lifestyle decisions and personal history impact your child’s risk of having a fetal alcohol spectrum disorder (FASD). 
+                            </p>
+                        </div>
+                    </div>   
+                </div>
+                <div class='col-sm-4 midCont'> 
+                    <div class='forPadding midHome'>
+                        <h3 class='text-center note'>
+                            Note<i class="fa fa-exclamation" aria-hidden="true"></i>
+                        </h3>
+                        <p class='midTextHolder'>
+                            This assessment is only intended for women who have consumed any amount of alcohol at some point during their pregnancy. If you have abstained from alcohol while trying to conceive and during your pregnancy, your child is not at risk for a FASD.
+                        </p>
+                        <p class='midTextHolder1'>
+                            This assessment is a screening tool designed to connect you to more information and resources. Please speak to a medical professional about any concerns that you may have regarding your pregnancy and/or substance use. 
+                        </p>
+                        <div class="text-center homeButton">
+                            <button class="btn btn-info homeBtn btn-lg" data-toggle="modal" onclick="ga('send', 'event', {'eventCategory': 'assessment', 'eventAction': 'asessmentAuthentication', 'eventLabel': 'Assessment Authentication Start'});" data-target="#infoModal">Take Assessment</button>
+                        </div>
+                        <div class="text-center homeButtonAlt">
+                            <button class="btn btn-info homeBtnAlt btn-lg" onclick="ga('send', 'event', {'eventCategory': 'assessment', 'eventAction': 'asessmentAuthentication', 'eventLabel': 'Assessment Authentication Start'});" data-toggle="modal" data-target="#infoModal">
+                                <p>Take</p>
+                                <br><p>Assessment</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-4 rightCont'> 
+                    <div class='forPadding rightHome'>
+                        <p class='nonTransparent'>If you are pregnant and have consumed alcohol or are currently drinking during your pregnancy, complete this quiz to:
+                        </p> 
+                        <ul class="homePageList">
+                          <li class="i1"><i class="fa fa-circle fa-fw" aria-hidden="true"></i> Learn about the possibility of your child having FASD</li>
+                          <li class="i2"><i class="fa fa-circle fa-fw" aria-hidden="true"></i> Discover your healthy lifestyle habits and learn what lifestyle changes you can make during your pregnancy</li>
+                          <li class="i3"><i class="fa fa-circle fa-fw" aria-hidden="true"></i> Connect to resources and gain information to better understand risk factors for FASD</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-sm-4 midCont">
-            <div class="forPadding midHome">
-              <h3 class="text-center note">
-                Note<i class="fa fa-exclamation" aria-hidden="true"></i>
-              </h3>
-              <p class="midTextHolder">
-                This assessment is only intended for women who have consumed any
-                amount of alcohol at some point during their pregnancy. If you
-                have abstained from alcohol while trying to conceive and during
-                your pregnancy, your child is not at risk for a FASD.
-              </p>
-              <p class="midTextHolder1">
-                This assessment is a screening tool designed to connect you to
-                more information and resources. Please speak to a medical
-                professional about any concerns that you may have regarding your
-                pregnancy and/or substance use.
-              </p>
-              <div class="text-center homeButton">
-                <button
-                  class="btn btn-info homeBtn btn-lg"
-                  data-toggle="modal"
-                  onclick="ga('send', 'event', {'eventCategory': 'assessment', 'eventAction': 'asessmentAuthentication', 'eventLabel': 'Assessment Authentication Start'});"
-                  data-target="#infoModal"
-                >
-                  Take Assessment
-                </button>
-              </div>
-              <div class="text-center homeButtonAlt">
-                <button
-                  class="btn btn-info homeBtnAlt btn-lg"
-                  onclick="ga('send', 'event', {'eventCategory': 'assessment', 'eventAction': 'asessmentAuthentication', 'eventLabel': 'Assessment Authentication Start'});"
-                  data-toggle="modal"
-                  data-target="#infoModal"
-                >
-                  <p>Take</p>
-                  <br />
-                  <p>Assessment</p>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 rightCont">
-            <div class="forPadding rightHome">
-              <p class="nonTransparent">
-                If you are pregnant and have consumed alcohol or are currently
-                drinking during your pregnancy, complete this quiz to:
-              </p>
-              <ul class="homePageList">
-                <li class="i1">
-                  <i class="fa fa-circle fa-fw" aria-hidden="true"></i> Learn
-                  about the possibility of your child having FASD
-                </li>
-                <li class="i2">
-                  <i class="fa fa-circle fa-fw" aria-hidden="true"></i> Discover
-                  your healthy lifestyle habits and learn what lifestyle changes
-                  you can make during your pregnancy
-                </li>
-                <li class="i3">
-                  <i class="fa fa-circle fa-fw" aria-hidden="true"></i> Connect
-                  to resources and gain information to better understand risk
-                  factors for FASD
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
 
-      <!-- Part4 - Home Content Style -->
-      <style>
-        .homeTent {
-          margin-top: 2em !important;
-          font-family: Helvetica, sans-serif;
-          color: #444;
-        }
-        .homeContentInner {
-          margin-top: 5em;
-        }
-        .forPadding {
-          background-color: #fff;
-          padding: 2em;
-          border-radius: 0.7em;
-        }
-        .leftHome,
-        .midHome,
-        .rightHome {
-          font-size: 1.2em !important;
-          padding-top: 2em;
-          line-height: 1.4em;
-          background-color: #fff;
-          display: table-cell !important;
-        }
-        .leftHomeContainer {
-          margin-top: 4em;
-          margin-bottom: 2.55em;
-        }
-        #leftHomeP2 {
-          padding-top: 1em;
-        }
-        .note {
-          color: #3f51b5 !important;
-          font-family: Anton, sans-serif !important;
-          font-style: bold;
-          font-size: 1.6em;
-          margin-top: 0.05em !important;
-        }
-        .fa-exclamation {
-          padding-left: 0.04em;
-        }
-        .midTextHolder,
-        .midTextHolder1 {
-          padding-top: 1.2em !important;
-          color: #000 !important;
-        }
-        .homeButton,
-        .homeButtonAlt {
-          padding-top: 2.4em;
-        }
-        .homeBtn,
-        .homeBtnAlt {
-          text-transform: uppercase;
-          font-weight: 700 !important;
-          background-color: #3f51b5 !important;
-          position: relative !important;
-          display: inline-block !important;
-          padding: 10px !important;
-          text-align: center;
-          border: #3f51b5;
-        }
-        .homeButtonAlt {
-          display: none;
-        }
-        .homeBtnAlt {
-          line-height: 0.6em;
-          padding-top: 1em !important;
-        }
-        .homeBtn:hover,
-        .homeBtnAlt:hover {
-          background-color: #000 !important;
-        }
-        .rightHome {
-          padding-bottom: 4.4em !important;
-          border: #000;
-        }
-        .homePageList {
-          margin-top: 1.75em;
-          list-style: none;
-          padding-left: 0;
-          line-height: 1.3em;
-        }
-        .i1 {
-          margin-top: -2em;
-        }
-        li[class^='i'] {
-          vertical-align: left;
-        }
-        .fa-circle {
-          color: #383838;
-          font-size: 0.6em !important;
-          margin-right: 0.5em;
-          vertical-align: middle;
-        }
-      </style>
+        <!-- Part4 - Home Content Style -->
+        <style>
+            .homeTent{margin-top:2em!important;font-family:Helvetica,sans-serif;color:#444}.homeContentInner{margin-top:5em}.forPadding{background-color:#fff;padding:2em;border-radius:.7em}.leftHome,.midHome,.rightHome{font-size:1.2em!important;padding-top:2em;line-height:1.4em;background-color:#fff;display:table-cell!important}.leftHomeContainer{margin-top:4em;margin-bottom:2.55em}#leftHomeP2{padding-top:1em}.note{color:#3F51B5!important;font-family:Anton,sans-serif!important;font-style:bold;font-size:1.6em;margin-top:.05em!important}.fa-exclamation{padding-left:.04em}.midTextHolder,.midTextHolder1{padding-top:1.2em!important;color:#000!important}.homeButton,.homeButtonAlt{padding-top:2.4em}.homeBtn,.homeBtnAlt{text-transform:uppercase;font-weight:700!important;background-color:#3F51B5!important;position:relative!important;display:inline-block!important;padding:10px!important;text-align:center;border:#3F51B5}.homeButtonAlt{display:none}.homeBtnAlt{line-height:.6em;padding-top:1em!important}.homeBtn:hover,.homeBtnAlt:hover{background-color:#000!important}.rightHome{padding-bottom:4.4em!important;border:#000}.homePageList{margin-top:1.75em;list-style:none;padding-left:0;line-height:1.3em}.i1{margin-top:-2em}li[class^='i']{vertical-align:left}.fa-circle{color:#383838;font-size:.6em!important;margin-right:.5em;vertical-align:middle}
+        </style>
     </div>
 
     <!-- first Multiple Page -->
-    <div
-      class="container-fluid"
-      id="firstMultiple-Container"
-      style="padding-top: 1.2em;"
-    >
-      <div class="col-sm-2"></div>
-      <div class="col-sm-8">
-        <h1>Demographics & Medical History</h1>
-        <div
-          class="footer-blurb-choice-1"
-          style="
-            height: 35px;
-            border: none;
-            transform: rotate(76deg);
-            width: 177%;
-            z-index: -1;
-          "
-        ></div>
-        <div class="jumbotron container-fluid" style="color: black;">
-          <table class="table">
-            <!--style='background: linear-gradient(45deg, red, blue);' -->
-            <tbody>
-              <tr id="qq1">
-                <!-- Q1 -->
-                <td>
-                  <div class="form-group">
-                    <label id="lq1" for="q1"
-                      >1. What is your current age?
-                    </label>
-                    <select
-                      class="form-control mpg1 q1"
-                      id="q1"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">Under 18</option>
-                      <option value="0">18-24</option>
-                      <option value="0">25-34</option>
-                      <option value="1">35-44</option>
-                      <option value="1">44+</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a1"></span>
-                </td>
-              </tr>
-              <tr id="qq2">
-                <!-- Q2 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q2"
-                      >2. What is your current socioeconomic status?</label
-                    >
-                    <select
-                      class="form-control mpg1 q2"
-                      id="q2"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="3">Poor</option>
-                      <option value="2">Lower class</option>
-                      <option value="1">Middle class</option>
-                      <option value="0">Upper class</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a2"></span>
-                </td>
-              </tr>
-              <tr id="qq3">
-                <!-- Q3 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q3"
-                      >3. What is the highest education level you have
-                      completed?</label
-                    >
-                    <select
-                      class="form-control mpg1 q3"
-                      id="q3"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="1">No secondary school diploma</option>
-                      <option value="1">High School diploma</option>
-                      <option value="0">College degree</option>
-                      <option value="0"
-                        >Masters or Doctorate level degree</option
-                      >
-                    </select>
-                  </div>
-                  <span class="help-block" id="a3"></span>
-                </td>
-              </tr>
-              <tr id="qq4">
-                <!-- Q4 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q4"
-                      >4. What is your BMI?&nbsp;&nbsp;&nbsp;<button
-                        type="button"
-                        class="btn btn-info"
-                        data-toggle="modal"
-                        data-target="#bmiModal"
-                      >
-                        Find Out Here
-                      </button></label
-                    >
-                    <select
-                      class="form-control mpg1 q4"
-                      id="q4"
-                      required="required"
-                      name="2"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">Normal, 18.5 – 24.9</option>
-                      <option value="1">Overweight, 25 – 29.9</option>
-                      <option value="1">Obesity, 30 or greater</option>
-                      <option value="3">Underweight, less than 18.5</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a4"></span>
-                </td>
-              </tr>
-              <tr id="qq5">
-                <!-- Q5 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q5"
-                      >5. Gravidity – How many previous pregnancies have you
-                      had?</label
-                    >
-                    <select
-                      class="form-control mpg1 q5"
-                      id="q5"
-                      required="required"
-                      name="2"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3+</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a5"></span>
-                </td>
-              </tr>
-              <tr id="qq6">
-                <!-- Q6 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q6"
-                      >6. Parity - How many times have you given birth?</label
-                    >
-                    <select
-                      class="form-control mpg1 q6"
-                      id="q6"
-                      required="required"
-                      name="2"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3+</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a6"></span>
-                </td>
-              </tr>
-              <tr id="qq7">
-                <!-- Q7 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q7"
-                      >7. Have you ever had a miscarriage, stillbirth, or a
-                      child die from SIDS?</label
-                    >
-                    <select
-                      class="form-control mpg1 q7"
-                      id="q7"
-                      required="required"
-                      name="2"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">No</option>
-                      <option value="3">Yes</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a7"></span>
-                </td>
-              </tr>
-              <tr id="qq8">
-                <!-- Q8 -->
-                <!-- mult -->
-                <td>
-                  <div class="form-group">
-                    <label for="q8"
-                      >8. Have you previously had a child diagnosed with any of
-                      the following conditions? (check all that apply)</label
-                    >
-                    <form
-                      class="q8"
-                      id="q8"
-                      required="required"
-                      name="2"
-                      style="color: black !important;"
-                    >
-                      <div class="checkbox zero">
-                        <label
-                          ><input type="checkbox" id="a" value="3" />FASD</label
-                        >
-                      </div>
-                      <div class="checkbox one">
-                        <label
-                          ><input
-                            type="checkbox"
-                            id="b"
-                            value="1"
-                          />Autism</label
-                        >
-                      </div>
-                      <div class="checkbox two">
-                        <label
-                          ><input type="checkbox" id="c" value="2" />ADHD</label
-                        >
-                      </div>
-                      <div class="checkbox three">
-                        <label
-                          ><input type="checkbox" id="d" value="2" />Learning
-                          Disability</label
-                        >
-                      </div>
-                      <div class="checkbox four">
-                        <label
-                          ><input
-                            type="checkbox"
-                            id="e"
-                            value="1"
-                          />Developmental Disability</label
-                        >
-                      </div>
-                      <div class="checkbox five">
-                        <label
-                          ><input type="checkbox" id="f" value="0" />None of the
-                          above</label
-                        >
-                      </div>
-                    </form>
-                  </div>
-                  <span class="help-block" id="a8"></span>
-                </td>
-              </tr>
-              <tr id="qq9">
-                <!-- Q9 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q9"
-                      >9.Have you ever dealt with or been diagnosed with
-                      depression?</label
-                    >
-                    <select
-                      class="form-control mpg1 q9"
-                      id="q9"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">No, I’ve never had depression</option>
-                      <option value="1"
-                        >Yes, but I am no longer depressed</option
-                      >
-                      <option value="2"
-                        >Yes, I currently have depression and have either a
-                        counselor or stable support group</option
-                      >
-                      <option value="3"
-                        >Yes, I currently have depression but have not sought
-                        help</option
-                      >
-                    </select>
-                  </div>
-                  <span class="help-block" id="a9"></span>
-                </td>
-              </tr>
-              <tr id="qq10">
-                <!-- Q10 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q10"
-                      >10. Have you ever been diagnosed with a mental illness
-                      other than depression?</label
-                    >
-                    <select
-                      class="form-control mpg1 q10"
-                      id="q10"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0"
-                        >No, I’ve never had a mental illness</option
-                      >
-                      <option value="1"
-                        >Yes, but I no longer feel impaired by a mental
-                        illness</option
-                      >
-                      <option value="2"
-                        >Yes, I currently have a mental illness and have either
-                        a counselor or stable support group</option
-                      >
-                      <option value="3"
-                        >Yes, I currently have a mental illness but have not
-                        sought help</option
-                      >
-                    </select>
-                  </div>
-                  <span class="help-block" id="a10"></span>
-                </td>
-              </tr>
-              <tr id="qq11">
-                <!-- Q11 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q11"
-                      >11. Have you ever been diagnosed as an alcoholic?</label
-                    >
-                    <select
-                      class="form-control mpg1 q11"
-                      id="q11"
-                      required="required"
-                      name="2"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0"
-                        >No, I’ve never been diagnosed as an alcoholic</option
-                      >
-                      <option value="1"
-                        >Yes, but I am no longer an alcoholic</option
-                      >
-                      <option value="2"
-                        >Yes, I am currently an alcoholic and attend therapy or
-                        a support group</option
-                      >
-                      <option value="3"
-                        >Yes, I am currently an alcoholic and have not sought
-                        help</option
-                      >
-                    </select>
-                  </div>
-                  <span class="help-block" id="a11"></span>
-                </td>
-              </tr>
-              <tr id="qq12">
-                <!-- Q12 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q12"
-                      >12. Do you have a personal history of sexual
-                      abuse?</label
-                    >
-                    <select
-                      class="form-control mpg1 q12"
-                      id="q12"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0"
-                        >No, I have never been sexually abused</option
-                      >
-                      <option value="1"
-                        >Yes, I was sexually abused as an adult</option
-                      >
-                      <option value="2"
-                        >Yes, I was sexually abused as a child
-                      </option>
-                      <option value="3"
-                        >Yes, I have been sexually abused as both a child and an
-                        adult</option
-                      >
-                    </select>
-                  </div>
-                  <span class="help-block" id="a12"></span>
-                </td>
-              </tr>
-              <tr id="qq13">
-                <!-- Q13 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q13">13. Do you smoke tobacco?</label>
-                    <select
-                      class="form-control mpg1 q13"
-                      id="q13"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">No, I have never smoked</option>
-                      <option value="1">No, but I used to smoke</option>
-                      <option value="2">Yes, but I am trying to quit</option>
-                      <option value="3">Yes, I am currently a smoker</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a13"></span>
-                </td>
-              </tr>
-              <tr id="qq14">
-                <!-- Q14 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q14"
-                      >14. Do you consume any of the following substances -
-                      marijuana, opiods, heroine, cocaine?</label
-                    >
-                    <select
-                      class="form-control mpg1 q14"
-                      id="q14"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0"
-                        >No, I have never consumed these substances</option
-                      >
-                      <option value="1"
-                        >No, but I used to consume at least one
-                        substance</option
-                      >
-                      <option value="2"
-                        >Yes, I consume at least one substance
-                        infrequently</option
-                      >
-                      <option value="3"
-                        >Yes, I consume at least one substance
-                        frequently</option
-                      >
-                    </select>
-                  </div>
-                  <span class="help-block" id="a14"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- current page score -->
-                <td>
-                  <span class="help-block text-center" id="page1Score"></span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="text-center">
-            <button
-              class="btn btn-info btn-lg"
-              style="padding: 10px 20px;"
-              id="checkValidity1"
-            >
-              Next >>
-            </button>
-          </p>
+    <div class="container-fluid" id="firstMultiple-Container" style="padding-top: 1.2em"> 
+        
+        <div class="col-sm-2"></div>
+        <div class='col-sm-8'>
+            <h1>Demographics & Medical History</h1>
+            <div class="footer-blurb-choice-1" style="height:35px; border:none; transform: rotate(76deg); width: 177%; z-index: -1"></div> 
+            <div class="jumbotron container-fluid" style='color: black;'>
+                <table class="table">  <!--style='background: linear-gradient(45deg, red, blue);' -->
+                    <tbody>
+                      <tr id='qq1'> <!-- Q1 -->
+                        <td>
+                            <div class="form-group">
+                                <label id='lq1' for="q1">1. What is your current age? </label>
+                                <select class="form-control mpg1 q1" id="q1" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>Under 18</option>
+                                    <option value=0>18-24</option>
+                                    <option value=0>25-34</option>
+                                    <option value=1>35-44</option>
+                                    <option value=1>44+</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a1'></span>
+                        </td>
+                      </tr>
+                      <tr id='qq2'> <!-- Q2 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q2">2. What is your current socioeconomic status?</label>
+                                <select class="form-control mpg1 q2" id="q2" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=3>Poor</option>
+                                    <option value=2>Lower class</option>
+                                    <option value=1>Middle class</option>
+                                    <option value=0>Upper class</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a2'></span>
+                        </td>
+                      </tr>
+                      <tr id='qq3'> <!-- Q3 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q3">3. What is the highest education level you have completed?</label>
+                                <select class="form-control mpg1 q3" id="q3" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=1>No secondary school diploma</option>
+                                    <option value=1>High School diploma</option>
+                                    <option value=0>College degree</option>
+                                    <option value=0>Masters or Doctorate level degree</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a3'></span>
+                        </td>
+                      </tr>
+                      <tr id='qq4'> <!-- Q4 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q4">4. What is your BMI?&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-info" data-toggle="modal" data-target="#bmiModal">Find Out Here</button></label>
+                                <select class="form-control mpg1 q4" id="q4" required="required" name=2>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>Normal, 18.5 – 24.9</option>
+                                    <option value=1>Overweight, 25 – 29.9</option>
+                                    <option value=1>Obesity, 30 or greater</option>
+                                    <option value=3>Underweight, less than 18.5</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a4'></span>
+                        </td>
+                      </tr>
+                      <tr id='qq5'> <!-- Q5 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q5">5. Gravidity – How many previous pregnancies have you had?</label>
+                                <select class="form-control mpg1 q5" id="q5" required="required" name=2>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>0</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3+</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a5'></span>
+                        </td>
+                      </tr>
+                      <tr id='qq6'> <!-- Q6 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q6">6. Parity - How many times have you given birth?</label>
+                                <select class="form-control mpg1 q6" id="q6" required="required" name=2>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>0</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3+</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a6'></span>
+                        </td>
+                      </tr> 
+                      <tr id='qq7'> <!-- Q7 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q7">7. Have you ever had a miscarriage, stillbirth, or a child die from SIDS?</label>
+                                <select class="form-control mpg1 q7" id="q7" required="required" name=2>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>No</option>
+                                    <option value=3>Yes</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a7'></span>
+                        </td>
+                      </tr>
+                      <tr id='qq8'> <!-- Q8 --> <!-- mult -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q8">8. Have you previously had a child diagnosed with any of the following conditions? (check all that apply)</label>
+                                <form class='q8' id='q8' required="required" name=2 style='color: black !important'>
+                                    <div class="checkbox zero">
+                                        <label><input type="checkbox" id='a' value=3>FASD</label>
+                                    </div>
+                                    <div class="checkbox one">
+                                        <label><input type="checkbox" id='b' value=1>Autism</label>
+                                    </div>
+                                    <div class="checkbox two">
+                                        <label><input type="checkbox" id='c' value=2>ADHD</label>
+                                    </div>
+                                    <div class="checkbox three">
+                                        <label><input type="checkbox" id='d' value=2>Learning Disability</label>
+                                    </div>
+                                    <div class="checkbox four">
+                                        <label><input type="checkbox" id='e' value=1>Developmental Disability</label>
+                                    </div>
+                                    <div class="checkbox five">
+                                        <label><input type="checkbox" id='f' value=0>None of the above</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <span class="help-block" id='a8'></span>
+                        </td>
+                      </tr>
+                      <tr id='qq9'> <!-- Q9 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q9">9.Have you ever dealt with or been diagnosed with depression?</label>
+                                <select class="form-control mpg1 q9" id="q9" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>No, I’ve never had depression</option>
+                                    <option value=1>Yes, but I am no longer depressed</option>
+                                    <option value=2>Yes, I currently have depression and have either a counselor or stable support group</option>
+                                    <option value=3>Yes, I currently have depression but have not sought help</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a9'></span>
+                        </td>
+                      </tr>
+                      <tr id='qq10'> <!-- Q10 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q10">10. Have you ever been diagnosed with a mental illness other than depression?</label>
+                                <select class="form-control mpg1 q10" id="q10" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>No, I’ve never had a mental illness</option>
+                                    <option value=1>Yes, but I no longer feel impaired by a mental illness</option>
+                                    <option value=2>Yes, I currently have a mental illness and have either a counselor or stable support group</option>
+                                    <option value=3>Yes, I currently have a mental illness but have not sought help</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a10'></span>
+                        </td>
+                      </tr>
+                      <tr id='qq11'> <!-- Q11 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q11">11. Have you ever been diagnosed as an alcoholic?</label>
+                                <select class="form-control mpg1 q11" id="q11" required="required" name=2>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>No, I’ve never been diagnosed as an alcoholic</option>
+                                    <option value=1>Yes, but I am no longer an alcoholic</option>
+                                    <option value=2>Yes, I am currently an alcoholic and attend therapy or a support group</option>
+                                    <option value=3>Yes, I am currently an alcoholic and have not sought help</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a11'></span>
+                        </td>
+                      </tr>
+                      <tr id='qq12'> <!-- Q12 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q12">12. Do you have a personal history of sexual abuse?</label>
+                                <select class="form-control mpg1 q12" id="q12" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>No, I have never been sexually abused</option>
+                                    <option value=1>Yes, I was sexually abused as an adult</option>
+                                    <option value=2>Yes, I was sexually abused as a child </option>
+                                    <option value=3>Yes, I have been sexually abused as both a child and an adult</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a12'></span>
+                        </td>
+                      </tr>
+                      <tr id='qq13'> <!-- Q13 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q13">13. Do you smoke tobacco?</label>
+                                <select class="form-control mpg1 q13" id="q13" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>No, I have never smoked</option>
+                                    <option value=1>No, but I used to smoke</option>
+                                    <option value=2>Yes, but I am trying to quit</option>
+                                    <option value=3>Yes, I am currently a smoker</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a13'></span>
+                        </td>
+                      </tr>
+                      <tr id='qq14'> <!-- Q14 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q14">14. Do you consume any of the following substances - marijuana, opiods, heroine, cocaine?</label>
+                                <select class="form-control mpg1 q14" id="q14" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>No, I have never consumed these substances</option>
+                                    <option value=1>No, but I used to consume at least one substance</option>
+                                    <option value=2>Yes, I consume at least one substance infrequently</option>
+                                    <option value=3>Yes, I consume at least one substance frequently</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a14'></span>
+                        </td>
+                      </tr>
+                        <tr> <!-- current page score -->
+                            <td>
+                                <span class="help-block text-center" id='page1Score'></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-center"><button class='btn btn-info btn-lg' style="padding: 10px 20px;" id='checkValidity1'>Next >></button></p>
+            </div>
         </div>
-      </div>
-      <!-- Part6 - Assessment Style -->
-      <style>
-        .footer-blurb-choice-1 {
-          background: #fff;
-          background: -webkit-linear-gradient(
-            45deg,
-            #fff,
-            #fff,
-            #2e79a6,
-            #ecb3ff,
-            #39909e,
-            #1a66ff,
-            ,
-            #fff,
-            #fff
-          );
-          background: -o-linear-gradient(
-            45deg,
-            #fff,
-            #fff,
-            #2e79a6,
-            #ecb3ff,
-            #39909e,
-            #1a66ff,
-            #fff,
-            #fff
-          );
-          background: -moz-linear-gradient(
-            45deg,
-            #fff,
-            #fff,
-            #2e79a6,
-            #ecb3ff,
-            #39909e,
-            #1a66ff,
-            #fff,
-            #fff
-          );
-          background: linear-gradient(
-            45deg,
-            #fff,
-            #fff,
-            #2e79a6,
-            #ecb3ff,
-            #39909e,
-            #1a66ff,
-            #fff,
-            #fff
-          );
-          width: 100vw;
-          position: relative;
-          left: 50%;
-          right: 50%;
-          margin-left: -50vw;
-          margin-right: -50vw;
-        }
-        .error {
-          box-shadow: 0 0 5px 1px red;
-        }
-        .questionError {
-          color: red;
-        }
-        .no-error {
-          box-shadow: none;
-          color: #000;
-        }
-      </style>
-    </div>
+        <!-- Part6 - Assessment Style -->
+        <style>
+            .footer-blurb-choice-1{background:#fff;background:-webkit-linear-gradient(45deg,#fff,#fff,#2E79A6,#ecb3ff,#39909E,#1a66ff,,#fff,#fff);background:-o-linear-gradient(45deg,#fff,#fff,#2E79A6,#ecb3ff,#39909E,#1a66ff,#fff,#fff);background:-moz-linear-gradient(45deg,#fff,#fff,#2E79A6,#ecb3ff,#39909E,#1a66ff,#fff,#fff);background:linear-gradient(45deg,#fff,#fff,#2E79A6,#ecb3ff,#39909E,#1a66ff,#fff,#fff);width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}.error{box-shadow:0 0 5px 1px red}.questionError{color:red}.no-error{box-shadow:none;color:#000}
+        </style>
+    </div> 
 
     <!-- second Multiple Page -->
-    <div
-      class="container-fluid"
-      id="secondMultpile-Container"
-      style="padding-top: 1.2em;"
-    >
-      <div class="col-sm-2"></div>
-      <div class="col-sm-8">
-        <h1>Family, Partner History & Preconception Consumption</h1>
-        <div
-          class="footer-blurb-choice-1"
-          style="
-            height: 35px;
-            border: none;
-            transform: rotate(76deg);
-            width: 177%;
-            z-index: -1;
-          "
-        ></div>
-        <div class="jumbotron" style="color: black;">
-          <table class="table">
-            <!--style='background: linear-gradient(45deg, red, blue);' -->
-            <tbody>
-              <tr>
-                <!-- Q15 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q15"
-                      >15. Has anyone in your family experienced alcoholism or
-                      addiction?</label
-                    >
-                    <select
-                      class="form-control mpg2 q15"
-                      id="q15"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">No</option>
-                      <option value="2">Yes</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a15"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- Q16 -->
-                <td>
-                  <div class="form-group">
-                    <label
-                      >16. If you currently live with your partner, do they
-                      currently drink or use drugs regularly?</label
-                    >
-                    <select
-                      class="form-control mpg2 q16"
-                      id="q16"
-                      required="required"
-                      name="2"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0"
-                        >No, my partner does not drink or is not drinking or
-                        using drugs while I am pregnant</option
-                      >
-                      <option value="1"
-                        >My partner drinks or uses a small amount of drugs
-                        regularly</option
-                      >
-                      <option value="2"
-                        >My partner binge drinks or uses drugs frequently (5 or
-                        more drinks on one occasion)</option
-                      >
-                      <option value="1">I do not live with my partner</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a16"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- Q17 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q17"
-                      >17. Has your current partner emotionally, physically or
-                      sexually abused you?</label
-                    >
-                    <select
-                      class="form-control mpg2 q17"
-                      id="q17"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">No</option>
-                      <option value="2">Yes</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a17"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- Q18 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q18"
-                      >18. How would you describe your living conditions?</label
-                    >
-                    <select
-                      class="form-control mpg2 q18"
-                      id="q18"
-                      required="required"
-                      name="2"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">Permanent, Stable</option>
-                      <option value="1"
-                        >Living with friends or relatives</option
-                      >
-                      <option value="2"
-                        >Transient, emergency shelters, jail, drug-free
-                        housing</option
-                      >
-                      <option value="3">Homeless</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a18"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- Q19 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q19"
-                      >19. In the 3 months prior to your pregnancy, on average,
-                      how many drinks did you consume in one sitting? [One
-                      standard drink = 1.5 oz. distilled spirits, 5 oz. wine, 12
-                      oz. beer]</label
-                    >
-                    <select
-                      class="form-control mpg2 q19"
-                      id="q19"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">I did not drink</option>
-                      <option value="1">A few sips</option>
-                      <option value="1">1 drink</option>
-                      <option value="2">2-3 drinks</option>
-                      <option value="3">4+ drinks</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a19"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- Q20 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q20"
-                      >20. In the 3 months prior to your pregnancy, on average,
-                      how often were you likely to drink?</label
-                    >
-                    <select
-                      class="form-control mpg2 q20"
-                      id="q20"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">I did not drink</option>
-                      <option value="1">1 per day</option>
-                      <option value="2">2-3 days per week</option>
-                      <option value="3">4-5 days per week</option>
-                      <option value="3">6-7 days per week</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a20"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- Q21 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q21"
-                      >21. Did you drink while trying to conceive?</label
-                    >
-                    <select
-                      class="form-control mpg2 q21"
-                      id="q21"
-                      required="required"
-                      name="2"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0"
-                        >I did not drink while trying to conceive</option
-                      >
-                      <option value="0"
-                        >I had an unplanned pregnancy but did not drink around
-                        the time I conceived</option
-                      >
-                      <option value="1"
-                        >I had an unplanned pregnancy and drank around the time
-                        I conceived</option
-                      >
-                      <option value="2"
-                        >I drank while trying to conceive</option
-                      >
-                    </select>
-                  </div>
-                  <span class="help-block" id="a21"></span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="help-block text-center" id="page2Score"></span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="row">
-            <p class="col-sm-4 text-center">
-              <button
-                class="btn btn-info btn-lg"
-                style="padding: 10px 20px;"
-                id="returnToPageQ1"
-              >
-                << Back
-              </button>
-            </p>
-            <div class="col-sm-4"></div>
-            <p class="col-sm-4 text-center">
-              <button
-                class="btn btn-info btn-lg"
-                style="padding: 10px 20px;"
-                id="checkValidity2"
-              >
-                Next >>
-              </button>
-            </p>
-          </div>
+    <div class="container-fluid" id="secondMultpile-Container" style="padding-top: 1.2em"> 
+        <div class="col-sm-2"></div>
+        <div class='col-sm-8'><h1>Family, Partner History & Preconception Consumption</h1>
+            <div class="footer-blurb-choice-1" style="height:35px; border:none; transform: rotate(76deg); width: 177%; z-index: -1"></div> 
+            <div class="jumbotron" style='color: black;'>
+                <table class="table">  <!--style='background: linear-gradient(45deg, red, blue);' -->
+                <tbody>
+                    <tr> <!-- Q15 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q15">15. Has anyone in your family experienced alcoholism or addiction?</label>
+                                <select class="form-control mpg2 q15" id="q15" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>No</option>
+                                    <option value=2>Yes</option>                                
+                                </select>
+                            </div>
+                            <span class="help-block" id='a15'></span>
+                        </td>
+                    </tr> 
+                    <tr> <!-- Q16 -->
+                        <td>
+                            <div class="form-group">
+                                <label>16. If you currently live with your partner, do they currently drink or use drugs regularly?</label>
+                                <select class="form-control mpg2 q16" id="q16" required="required" name=2>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>No, my partner does not drink or is not drinking or using drugs while I am pregnant</option>
+                                    <option value=1>My partner drinks or uses a small amount of drugs regularly</option>
+                                    <option value=2>My partner binge drinks or uses drugs frequently (5 or more drinks on one occasion)</option>
+                                    <option value=1>I do not live with my partner</option>                                
+                                </select>
+                            </div>
+                            <span class="help-block" id='a16'></span>
+                        </td> 
+                    </tr>
+                    <tr> <!-- Q17 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q17">17. Has your current partner emotionally, physically or sexually abused you?</label>
+                                <select class="form-control mpg2 q17" id="q17" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>No</option>
+                                    <option value=2>Yes</option>                               
+                                </select>
+                            </div>
+                            <span class="help-block" id='a17'></span>
+                        </td>
+                    </tr>
+                    <tr> <!-- Q18 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q18">18. How would you describe your living conditions?</label>
+                                <select class="form-control mpg2 q18" id="q18" required="required" name=2>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>Permanent, Stable</option>
+                                    <option value=1>Living with friends or relatives</option>       
+                                    <option value=2>Transient, emergency shelters, jail, drug-free housing</option> 
+                                    <option value=3>Homeless</option>                         
+                                </select>
+                            </div>
+                            <span class="help-block" id='a18'></span>
+                        </td>
+                    </tr>
+                    <tr> <!-- Q19 -->
+                        <td> 
+                            <div class="form-group">
+                                <label for="q19">19. In the 3 months prior to your pregnancy, on average, how many drinks did you consume in one sitting? [One standard drink = 1.5 oz. distilled spirits, 5 oz. wine, 12 oz. beer]</label>
+                                <select class="form-control mpg2 q19" id="q19" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>I did not drink</option>
+                                     <option value=1>A few sips</option>
+                                    <option value=1>1 drink</option>       
+                                    <option value=2>2-3 drinks</option> 
+                                    <option value=3>4+ drinks</option>                         
+                                </select>
+                            </div>
+                            <span class="help-block" id='a19'></span>
+                        </td>
+                    </tr>
+                    <tr> <!-- Q20 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q20">20. In the 3 months prior to your pregnancy, on average, how often were you likely to drink?</label>
+                                <select class="form-control mpg2 q20" id="q20" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>I did not drink</option>
+                                    <option value=1>1 per day</option>
+                                    <option value=2>2-3 days per week</option> 
+                                    <option value=3>4-5 days per week</option>       
+                                    <option value=3>6-7 days per week</option>                         
+                                </select>
+                            </div>
+                            <span class="help-block" id='a20'></span>
+                        </td>
+                    </tr>
+                    <tr> <!-- Q21 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q21">21. Did you drink while trying to conceive?</label>
+                                <select class="form-control mpg2 q21" id="q21" required="required" name=2>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>I did not drink while trying to conceive</option>
+                                    <option value=0>I had an unplanned pregnancy but did not drink around the time I conceived</option>
+                                    <option value=1>I had an unplanned pregnancy and drank around the time I conceived</option> 
+                                    <option value=2>I drank while trying to conceive</option>       
+                                </select>
+                            </div>
+                            <span class="help-block" id='a21'></span>
+                        </td>
+                    </tr>    
+                    <tr>
+                      <td>
+                          <span class="help-block text-center" id='page2Score'></span>
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class='row'>
+                  <p class="col-sm-4 text-center"><button class='btn btn-info btn-lg' style="padding: 10px 20px;" id='returnToPageQ1'><< Back</button></p>
+                  <div class="col-sm-4"></div>
+                  <p class="col-sm-4 text-center"><button class='btn btn-info btn-lg' style="padding: 10px 20px;" id="checkValidity2">Next >></button></p>
+              </div>
+            </div>
         </div>
-      </div>
-    </div>
+    </div> 
 
     <!-- third Multiple Page -->
-    <div
-      class="container-fluid"
-      id="thirdMultiple-Container"
-      style="padding-top: 1.2em;"
-    >
-      <div class="col-sm-2"></div>
-      <div class="col-sm-8">
-        <h1>Pregnancy, Alcohol & Nutrition</h1>
-        <div
-          class="footer-blurb-choice-1"
-          style="
-            height: 35px;
-            border: none;
-            transform: rotate(76deg);
-            width: 177%;
-            z-index: -1;
-          "
-        ></div>
-        <div class="jumbotron" style="color: black;">
-          <table class="table">
-            <!--style='background: linear-gradient(45deg, red, blue);' -->
-            <tbody>
-              <tr>
-                <!-- Q22 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q22"
-                      >22. Are you pregnant and currently abstaining from
-                      alcohol?</label
-                    >
-                    <select
-                      class="form-control mpg3 q22"
-                      id="q22"
-                      required="required"
-                      name="4"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">Yes</option>
-                      <option value="3">No</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a22"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- Q23 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q23"
-                      >23. During your pregnancy, on average, how often were/are
-                      you likely to drink?</label
-                    >
-                    <select
-                      class="form-control mpg3 q23"
-                      id="q23"
-                      required="required"
-                      name="5"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="1">1 time</option>
-                      <option value="1">2-5 times</option>
-                      <option value="2">1-2 times a month</option>
-                      <option value="3">1-2 times a week</option>
-                      <option value="4">3-5 times a week</option>
-                      <option value="5">6-7 times a week</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a23"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- Q24 -->
-                <!-- mult -->
-                <td>
-                  <div class="form-group">
-                    <label for="q24"
-                      >24. If you have consumed alcohol during your pregnancy,
-                      how far along were you when you did so? (check all that
-                      apply)</label
-                    >
-                    <form
-                      class="q24"
-                      id="q24"
-                      required="required"
-                      name="4"
-                      style="color: black !important;"
-                    >
-                      <div class="checkbox 3zero">
-                        <label><input type="checkbox" id="a" />0-2 weeks</label>
-                      </div>
-                      <div class="checkbox 3one">
-                        <label><input type="checkbox" id="b" />3-8 weeks</label>
-                      </div>
-                      <div class="checkbox 3two">
-                        <label
-                          ><input type="checkbox" id="c" />9-20 weeks</label
-                        >
-                      </div>
-                      <div class="checkbox 3three">
-                        <label
-                          ><input type="checkbox" id="d" />20-36 weeks</label
-                        >
-                      </div>
-                      <div class="checkbox 3four">
-                        <label><input type="checkbox" id="e" />38 weeks</label>
-                      </div>
-                    </form>
-                  </div>
-                  <span class="help-block" id="a24"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- Q25 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q25"
-                      >25. On average, how many drinks were you or are you
-                      consuming in one sitting during your pregnancy? [One
-                      standard drink = 1.5 oz. distilled spirits, 5 oz. wine, 12
-                      oz. beer]</label
-                    >
-                    <select
-                      class="form-control mpg3 q25"
-                      id="q25"
-                      required="required"
-                      name="5"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="1">A few sips</option>
-                      <option value="2">One drink</option>
-                      <option value="3">2-3 drinks</option>
-                      <option value="4">4+ drinks</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a25"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- Q26 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q26"
-                      >26. On average, how many complete meals do you eat in a
-                      day?</label
-                    >
-                    <select
-                      class="form-control mpg3 q26"
-                      id="q26"
-                      required="required"
-                      name="2"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">Three</option>
-                      <option value="1">Two</option>
-                      <option value="2">One</option>
-                      <option value="3">None</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a26"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- Q27 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q27"
-                      >27. On average, how often do you eat lean proteins, dark
-                      and bright colored vegetables and fruits, and whole grain
-                      products?</label
-                    >
-                    <select
-                      class="form-control mpg3 q27"
-                      id="q27"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">Daily</option>
-                      <option value="1">A few days per week</option>
-                      <option value="2">A few days per month</option>
-                      <option value="3">Never</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a27"></span>
-                </td>
-              </tr>
-              <tr>
-                <!-- Q28 -->
-                <td>
-                  <div class="form-group">
-                    <label for="q28"
-                      >28. Do you take prenatal vitamins, a multivitamin, or
-                      iron and folate supplements?</label
-                    >
-                    <select
-                      class="form-control mpg3 q28"
-                      id="q28"
-                      required="required"
-                      name="1"
-                    >
-                      <option value="" selected disabled hidden></option>
-                      <option value="0">Yes</option>
-                      <option value="2">No</option>
-                    </select>
-                  </div>
-                  <span class="help-block" id="a28"></span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="help-block text-center" id="page3Score"></span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="row">
-            <p class="col-sm-4 text-center">
-              <button
-                class="btn btn-info btn-lg"
-                style="padding: 10px 20px;"
-                id="returnToPageQ2"
-              >
-                << Back
-              </button>
-            </p>
-            <div class="col-sm-4"></div>
-            <p class="col-sm-4 text-center">
-              <button
-                class="btn btn-info btn-lg"
-                style="padding: 10px 20px;"
-                id="submitData"
-              >
-                Submit
-              </button>
-            </p>
-          </div>
+    <div class="container-fluid" id="thirdMultiple-Container" style="padding-top: 1.2em"> 
+        <div class="col-sm-2"></div>
+        <div class='col-sm-8'><h1>Pregnancy, Alcohol & Nutrition</h1>
+            <div class="footer-blurb-choice-1" style="height:35px; border:none; transform: rotate(76deg); width: 177%; z-index: -1"></div> 
+            <div class="jumbotron" style='color: black;'>
+                <table class="table">  <!--style='background: linear-gradient(45deg, red, blue);' -->
+                <tbody>
+                    <tr> <!-- Q22 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q22">22. Are you pregnant and currently abstaining from alcohol?</label>
+                                <select class="form-control mpg3 q22" id="q22" required="required" name=4>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>Yes</option>
+                                    <option value=3>No</option>                                
+                                </select>
+                            </div>
+                            <span class="help-block" id='a22'></span>
+                        </td>
+                    </tr> 
+                    <tr> <!-- Q23 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q23">23. During your pregnancy, on average, how often were/are you likely to drink?</label>
+                                <select class="form-control mpg3 q23" id="q23" required="required" name=5>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=1>1 time</option>
+                                    <option value=1>2-5 times</option>
+                                    <option value=2>1-2 times a month</option>
+                                    <option value=3>1-2 times a week</option>
+                                    <option value=4>3-5 times a week</option>
+                                    <option value=5>6-7 times a week</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a23'></span>
+                        </td>
+                    </tr>
+                    <tr> <!-- Q24 --> <!-- mult -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q24">24. If you have consumed alcohol during your pregnancy, how far along were you when you did so? (check all that apply)</label>
+                                <form class='q24' id='q24' required="required" name=4 style='color: black !important'>
+                                    <div class="checkbox 3zero">
+                                        <label><input type="checkbox" id='a'>0-2 weeks</label>
+                                    </div>
+                                    <div class="checkbox 3one">
+                                        <label><input type="checkbox" id='b'>3-8 weeks</label>
+                                    </div>
+                                    <div class="checkbox 3two">
+                                        <label><input type="checkbox" id='c'>9-20 weeks</label>
+                                    </div>
+                                    <div class="checkbox 3three">
+                                        <label><input type="checkbox" id='d'>20-36 weeks</label>
+                                    </div>
+                                    <div class="checkbox 3four">
+                                        <label><input type="checkbox" id='e'>38 weeks</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <span class="help-block" id='a24'></span>
+                        </td>
+                    </tr>
+                    <tr> <!-- Q25 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q25">25. On average, how many drinks were you or are you consuming in one sitting during your pregnancy? [One standard drink = 1.5 oz. distilled spirits, 5 oz. wine, 12 oz. beer]</label>
+                                <select class="form-control mpg3 q25" id="q25" required="required" name=5>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=1>A few sips</option>
+                                    <option value=2>One drink</option>
+                                    <option value=3>2-3 drinks</option>
+                                    <option value=4>4+ drinks</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a25'></span>
+                        </td>
+                    </tr>
+                    <tr> <!-- Q26 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q26">26. On average, how many complete meals do you eat in a day?</label>
+                                <select class="form-control mpg3 q26" id="q26" required="required" name=2>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>Three</option>
+                                    <option value=1>Two</option>
+                                    <option value=2>One</option>
+                                    <option value=3>None</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a26'></span>
+                        </td>
+                    </tr>
+                    <tr> <!-- Q27 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q27">27. On average, how often do you eat lean proteins, dark and bright colored vegetables and fruits, and whole grain products?</label>
+                                <select class="form-control mpg3 q27" id="q27" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>Daily</option>
+                                    <option value=1>A few days per week</option>
+                                    <option value=2>A few days per month</option>
+                                    <option value=3>Never</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a27'></span>
+                        </td>
+                    </tr>
+                    <tr> <!-- Q28 -->
+                        <td>
+                            <div class="form-group">
+                                <label for="q28">28. Do you take prenatal vitamins, a multivitamin, or iron and folate supplements?</label>
+                                <select class="form-control mpg3 q28" id="q28" required="required" name=1>
+                                    <option value='' selected disabled hidden></option>
+                                    <option value=0>Yes</option>
+                                    <option value=2>No</option>
+                                </select>
+                            </div>
+                            <span class="help-block" id='a28'></span>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <span class="help-block text-center" id='page3Score'></span>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+              <div class='row'>
+                  <p class="col-sm-4 text-center"><button class='btn btn-info btn-lg' style="padding: 10px 20px;" id='returnToPageQ2'><< Back</button></p>
+                  <div class="col-sm-4"></div>
+                  <p class="col-sm-4 text-center"><button class='btn btn-info btn-lg' style="padding: 10px 20px;" id="submitData">Submit</button></p>
+              </div>
+            </div>
         </div>
-      </div>
-    </div>
-
+    </div> 
+    
     <!-- Part7 - Result Style -->
     <style>
-      .resultTitle > h2,
-      .risk-title {
-        font-weight: 700;
-      }
-      #risk-box-2 > p > b,
-      .resourceLinks > div {
-        text-decoration: underline;
-      }
-      #risk-description {
-        color: #fff;
-      }
-      .resultContent {
-        color: #000;
-        background-color: transparent;
-      }
-      .resultInfo {
-        background: linear-gradient(#fff, #fefeff, #fff) !important;
-        border-radius: 0.7em;
-      }
-      .resultTitle {
-        margin-top: -1em;
-        margin-bottom: -0.5em;
-      }
-      #risk-title {
-        margin-bottom: 2em;
-        font-size: large;
-      }
-      .risk-title {
-        font-size: 1.2em;
-        background: linear-gradient(#fff, #fff, #fff, #fff, #fffefe) !important;
-      }
-      .riskContainer {
-        margin-top: 0;
-      }
-      #risk-description {
-        border-radius: 0.8em;
-        background-color: #fff;
-        padding: 1.2em;
-        text-align: left;
-      }
-      #risk-border {
-        margin-top: 1.2em;
-        border: 5px solid #fff;
-        border-radius: 8px;
-        padding: 8px 8px 8px 25px;
-        border-top-style: none;
-        border-bottom-style: none;
-      }
-      #risk-box-1,
-      #risk-box-2 {
-        border: 5px double #fff;
-        outline: #fff solid 7px;
-      }
-      #risk-box-1 {
-        margin-top: 2em;
-        padding: 8px;
-      }
-      .box1Title {
-        margin-top: 1.2em;
-      }
-      .riskList {
-        font-size: 19px;
-      }
-      #risk-box-2 {
-        padding: 8px 9px 8px 8px;
-        margin-top: 7px;
-      }
-      #risk-box-2 > p {
-        padding-left: 0.8em;
-      }
-      .resourceLinks {
-        margin-top: 1.5em !important;
-      }
-      .resourceLinks > h2 {
-        text-align: left;
-        margin-top: 1em;
-      }
-      .list {
-        line-height: 1.5em;
-        font-size: 20px;
-      }
-      .sources {
-        background-color: #fff !important;
-        border-radius: 0.7em;
-        margin-top: 2em;
-      }
-      .sources > h2 {
-        margin-bottom: 1.2em;
-      }
+        .resultTitle>h2,.risk-title{font-weight:700}#risk-box-2>p>b,.resourceLinks>div{text-decoration:underline}#risk-description{color:#fff}.resultContent{color:#000;background-color:transparent}.resultInfo{background:linear-gradient(#fff,#fefeff,#fff)!important;border-radius:.7em}.resultTitle{margin-top:-1em;margin-bottom:-.5em}#risk-title{margin-bottom:2em;font-size:large}.risk-title{font-size:1.2em;background:linear-gradient(#fff,#fff,#fff,#fff,#fffefe)!important}.riskContainer{margin-top:0}#risk-description{border-radius:.8em;background-color:#FFF;padding:1.2em;text-align:left}#risk-border{margin-top:1.2em;border:5px solid #FFF;border-radius:8px;padding:8px 8px 8px 25px;border-top-style:none;border-bottom-style:none}#risk-box-1,#risk-box-2{border:5px double #FFF;outline:#FFF solid 7px}#risk-box-1{margin-top:2em;padding:8px}.box1Title{margin-top:1.2em}.riskList{font-size:19px}#risk-box-2{padding:8px 9px 8px 8px;margin-top:7px}#risk-box-2>p{padding-left:.8em}.resourceLinks{margin-top:1.5em!important}.resourceLinks>h2{text-align:left;margin-top:1em}.list{line-height:1.5em;font-size:20px}.sources{background-color:#fff!important;border-radius:.7em;margin-top:2em}.sources>h2{margin-bottom:1.2em}
     </style>
-
+    
     <!-- result screen-->
     <div class="container-fluid" id="resultScreen-Container">
-      <div class="jumbotron container resultContent">
-        <div class="jumbotron container-fluid resultInfo">
-          <div class="jumbotron container-fluid devFeat">
-            <div class="col-sm-12 text-center" id="displayTotal"></div>
-            <div class="text-center col-sm-6">
-              <label id="labelColor" for="color">Color picked: </label>
-              <input class="colorpicker" type="color" id="color" />
-            </div>
-            <div class="text-center col-sm-6">
-              <input
-                class="scorePicker"
-                type="number"
-                id="score"
-                min="0"
-                max="160"
-              />
-              <button
-                class="btn btn-info btn-lg"
-                style="padding: 10px 20px;"
-                id="selectScore"
-              >
-                Select Score
-              </button>
-            </div>
-          </div>
-          <!--
+        <div class="jumbotron container resultContent">
+            <div class='jumbotron container-fluid resultInfo'>
+                <div class='jumbotron container-fluid devFeat'>
+                    <div class='col-sm-12 text-center' id='displayTotal'></div>
+                    <div class='text-center col-sm-6'>
+                        <label id='labelColor' for="color">Color picked: </label>
+                        <input class='colorpicker' type="color" id='color'>
+                    </div>
+                    <div class='text-center col-sm-6'>
+                        <input class='scorePicker' type="number" id='score' min="0" max="160">
+                        <button class='btn btn-info btn-lg' style="padding: 10px 20px;" id="selectScore">Select Score</button>
+                    </div>
+                </div>
+                <!--
                 <div class='text-center col-sm-12 resultTitle'>
                     <h2>FASD RISK CALCULATOR FEEDBACK</h2>
                 </div>
             -->
-          <div class="container-fluid text-center col-sm-12" id="risk-title">
-            <h2>
-              <span class="risk-title">RISK AMOUNT HERE</span>
-            </h2>
-          </div>
-          <div class="col-sm-12 row riskContainer">
-            <div class="container col-sm-6">
-              <p id="risk-description">
-                Risk Description
-              </p>
-              <p id="risk-border">
-                Fetal Alcohol Spectrum Disorders (FASD) is an umbrella term
-                describing the range of effects that can occur in an individual
-                prenatally exposed to alcohol.
-              </p>
-              <div id="risk-box-1">
-                <h3 class="text-center box1Title">
-                  Making Healthy Decisions
-                </h3>
-                <ul class="riskList">
-                  <li>
-                    Abstain from alcohol for the remainder of your pregnancy.
-                  </li>
-                  <li>
-                    Talk to your physician, other healthcare professional, or
-                    contact Alcoholics Anonymous if you need help to stop
-                    drinking drinking or using other substances.
-                  </li>
-                  <li>
-                    Avoid tobacco, marijuana, illegal and legal drugs that can
-                    harm your baby’s development.
-                  </li>
-                  <li>Find a stable support group or community.</li>
-                  <li>
-                    Eat a healthy, balanced diet and talk to your physician
-                    about taking prenatal vitamins.
-                  </li>
-                  <li>
-                    If you are concerned that your child may have a FASD, speak
-                    to a physician about receiving a proper diagnosis.
-                  </li>
-                  <li>
-                    Visit the NOFAS website for more information on FASD and to
-                    connect to a resource directory
-                  </li>
-                </ul>
-              </div>
+                <div class='container-fluid text-center col-sm-12' id='risk-title'>
+                    <h2>
+                        <span class='risk-title'>RISK AMOUNT HERE</span>
+                    </h2>
+                </div>
+                <div class='col-sm-12 row riskContainer'>
+                    <div class='container col-sm-6'>
+                        <p id='risk-description'>
+                            Risk Description
+                        </p>
+                        <p id='risk-border'>
+                            Fetal Alcohol Spectrum Disorders (FASD) is an umbrella term describing the range of effects that can occur in an individual prenatally exposed to alcohol.
+                        </p>
+                        <div id='risk-box-1'>
+                            <h3 class='text-center box1Title'>
+                                Making Healthy Decisions
+                            </h3>
+                            <ul class='riskList'>
+                                <li>Abstain from alcohol for the remainder of your pregnancy. </li>
+                                <li>Talk to your physician, other healthcare professional, or contact Alcoholics Anonymous if you need help to stop drinking drinking or using other substances.</li>
+                                <li>Avoid tobacco, marijuana, illegal and legal drugs that can harm your baby’s development.</li>
+                                <li>Find a stable support group or community. </li>
+                                <li>Eat a healthy, balanced diet and talk to your physician about taking prenatal vitamins. </li>
+                                <li>If you are concerned that your child may have a FASD, speak to a physician about receiving a proper diagnosis.</li>
+                                <li>Visit the NOFAS website for more information on FASD and to connect to a resource directory</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class='container col-sm-6' id='giveMarginBelow768px'>
+                        <div id='risk-box-2'>
+                            <p>
+                                <b>Important Note</b>:
+                                While there are some known risk factors for a child to develop FASD, there is no guarantee that one factor will lead to an alcohol-related disorder. There is still more research to be done in regards to how genetics affect an individual's risk for FASD. Similarly, everyone's metabolism functions at different rates, so risk may vary among individuals. The only way to completely prevent your child from developing a fetal alcohol spectrum disorder (FASD) is to abstain from drinking while pregnant.
+                            </p>
+                        </div>
+                    </div>
+                    <div class='container col-sm-6 resourceLinks'>
+                        <h2>
+                            Resources: 
+                        </h2>
+                        <div class="list-group" >
+                            <p><a class='list-group-item' href="https://www.nofas.org/resource-directory/">NOFAS Resource Directory</a></p>
+                            <p><a class='list-group-item' href="https://www.nofas.org/circleofhope/">NOFAS Circle of Hope</a></p>
+                            <p><a class='list-group-item' href="https://www.cdc.gov/ncbddd/fasd/index.html">Center for Disease Control and Prevention</a></p>
+                            <p><a class='list-group-item' href="https://findtreatment.samhsa.gov/locator/home">SAMHSA Substance Use Treatment Locator</a></p>
+                            <p><a class='list-group-item' href="https://www.aa.org/?Media=PlayFlash">Alcoholics Anonymous</a></p>
+                            <p><a class='list-group-item' href="https://ncadv.org/learn-more/resources">National Coalition against Domestic Violence Resources</a></p>
+                            <p><a class='list-group-item' href="http://cifasd.org/">Collaborative Initiative on Fetal Alcohol Spectrum Disorders</a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="container col-sm-6" id="giveMarginBelow768px">
-              <div id="risk-box-2">
-                <p>
-                  <b>Important Note</b>: While there are some known risk factors
-                  for a child to develop FASD, there is no guarantee that one
-                  factor will lead to an alcohol-related disorder. There is
-                  still more research to be done in regards to how genetics
-                  affect an individual's risk for FASD. Similarly, everyone's
-                  metabolism functions at different rates, so risk may vary
-                  among individuals. The only way to completely prevent your
-                  child from developing a fetal alcohol spectrum disorder (FASD)
-                  is to abstain from drinking while pregnant.
-                </p>
-              </div>
+            <div class='col-sm-12 sources'>
+                <h2 style='padding-left: 1em !important; padding-top: 1em !important'>Sources</h2>
+                <blockquote>
+                    Abel, E.L. & Hannigan, J.H. (1995). Maternal Risk Factors in Fetal Alcohol Syndrome: Provocative and Permissive Influence.<i> Neurotoxicology and Teratology</i>, 17(4), 445-662. 
+                </blockquote>
+                <blockquote>
+                    Astley, S.J., Bailey, D., Talbot, C. & Clarren, S.K. (2000). Fetal Alcohol Syndrome (FAS) Primary Prevention Through FAS Diagnosis: II. A Comprehensive Profile of 80 Birth Mothers of Children with FAS. <i>Alcohol & Alcoholism</i>, 35(5), 509-519.
+                </blockquote>
+                <blockquote>
+                    Bailey, B.A. & Sokol, R.J. (2011). Prenatal Alcohol Exposure and Miscarriage, Stillbirth, Preterm Delivery, SIDS. <i>Alcohol Research & Health</i>, 34(1), 86-91.
+                </blockquote>
+                <blockquote>
+                    Bhuvaneswar, C.G., Chang, G.C., Epstein, L.A., & Stern, T.A. (2007). Alcohol Use During Pregnancy: Prevalence and Impact. <i>Primary Care Companion to The Journal of Clinical Psychiatry</i>, 9(6), 455–460.
+                </blockquote>
+                <blockquote>
+                    Ceccanti, M., et al. (2014). Maternal Risk Factors for Fetal Alcohol Spectrum Disorders in Province in Italy. <i>Drug and Alcohol Dependance</i>, 145, 201-208.
+                </blockquote>
+                <blockquote>
+                   Charness, M.E., Riley, E.P., Sowell, E.R. (2016). Drinking During Pregnancy and the Developing Brain: Is Any Amount Safe? <i>Trends in Cognitive Sciences</i>, 20(2), 80-82.
+                </blockquote>
+                <blockquote>
+                   Coles, C.D., et al. (2015). Dose and Timing of Prenatal Alcohol Exposure and Maternal Nutritional Supplements: Developmental Effects on 6-Month-Old Infants. <i>Maternal and Child Health Journal</i>, 20(2), 19(12), 2605-2614. 
+                </blockquote>
+                <blockquote>
+                   Lebel, C., et al. (2012). A Longitudinal Study of the Long-term Consequences of Drinking During Pregnancy: Heavy in Utero Alcohol Exposure Disrupts the Normal Processes of Brain Development. <i>The Journal of Neuroscience: The Official Journal of the Study of Neuroscience</i>, 32(44), 15243-15251. 
+                </blockquote>
+                <blockquote>
+                    May, P. A. & Gossage, J.P. (2011).Maternal Risk Factors for Fetal Alcohol Spectrum Disorders: Not as Simple As it Might Seem. <i>Alcohol Research & Health, NIH: National Institute on Alcohol Abuse and Alcoholism</i>, 34(1), 15-26.
+                </blockquote>
+                <blockquote>
+                    May, P.A., et al. (2014). Prevalence and Characteristics of Fetal Alcohol Spectrum Disorders. <i>PEDIATRICS</i>, 134(5), 855-866.
+                </blockquote>
+                <blockquote>
+                    Ramsay, M. (2010). Genetic and Epigenetic Insights into Fetal Alcohol Spectrum Disorder. <i>Genome Med</i>, 2(4), 27.
+                </blockquote>
+                <blockquote>
+                    Shaid, A.R., Hosna, A.U., & Alam, A. (2012). Pregnancy and Nutrition. <i>Bangladesh Journal of Medical Science</i>, 11(4), 267-272.
+                </blockquote>
             </div>
-            <div class="container col-sm-6 resourceLinks">
-              <h2>
-                Resources:
-              </h2>
-              <div class="list-group">
-                <p>
-                  <a
-                    class="list-group-item"
-                    href="https://www.nofas.org/resource-directory/"
-                    >NOFAS Resource Directory</a
-                  >
-                </p>
-                <p>
-                  <a
-                    class="list-group-item"
-                    href="https://www.nofas.org/circleofhope/"
-                    >NOFAS Circle of Hope</a
-                  >
-                </p>
-                <p>
-                  <a
-                    class="list-group-item"
-                    href="https://www.cdc.gov/ncbddd/fasd/index.html"
-                    >Center for Disease Control and Prevention</a
-                  >
-                </p>
-                <p>
-                  <a
-                    class="list-group-item"
-                    href="https://findtreatment.samhsa.gov/locator/home"
-                    >SAMHSA Substance Use Treatment Locator</a
-                  >
-                </p>
-                <p>
-                  <a
-                    class="list-group-item"
-                    href="https://www.aa.org/?Media=PlayFlash"
-                    >Alcoholics Anonymous</a
-                  >
-                </p>
-                <p>
-                  <a
-                    class="list-group-item"
-                    href="https://ncadv.org/learn-more/resources"
-                    >National Coalition against Domestic Violence Resources</a
-                  >
-                </p>
-                <p>
-                  <a class="list-group-item" href="http://cifasd.org/"
-                    >Collaborative Initiative on Fetal Alcohol Spectrum
-                    Disorders</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="col-sm-12 sources">
-          <h2
-            style="padding-left: 1em !important; padding-top: 1em !important;"
-          >
-            Sources
-          </h2>
-          <blockquote>
-            Abel, E.L. & Hannigan, J.H. (1995). Maternal Risk Factors in Fetal
-            Alcohol Syndrome: Provocative and Permissive Influence.<i>
-              Neurotoxicology and Teratology</i
-            >, 17(4), 445-662.
-          </blockquote>
-          <blockquote>
-            Astley, S.J., Bailey, D., Talbot, C. & Clarren, S.K. (2000). Fetal
-            Alcohol Syndrome (FAS) Primary Prevention Through FAS Diagnosis: II.
-            A Comprehensive Profile of 80 Birth Mothers of Children with FAS.
-            <i>Alcohol & Alcoholism</i>, 35(5), 509-519.
-          </blockquote>
-          <blockquote>
-            Bailey, B.A. & Sokol, R.J. (2011). Prenatal Alcohol Exposure and
-            Miscarriage, Stillbirth, Preterm Delivery, SIDS.
-            <i>Alcohol Research & Health</i>, 34(1), 86-91.
-          </blockquote>
-          <blockquote>
-            Bhuvaneswar, C.G., Chang, G.C., Epstein, L.A., & Stern, T.A. (2007).
-            Alcohol Use During Pregnancy: Prevalence and Impact.
-            <i>Primary Care Companion to The Journal of Clinical Psychiatry</i>,
-            9(6), 455–460.
-          </blockquote>
-          <blockquote>
-            Ceccanti, M., et al. (2014). Maternal Risk Factors for Fetal Alcohol
-            Spectrum Disorders in Province in Italy.
-            <i>Drug and Alcohol Dependance</i>, 145, 201-208.
-          </blockquote>
-          <blockquote>
-            Charness, M.E., Riley, E.P., Sowell, E.R. (2016). Drinking During
-            Pregnancy and the Developing Brain: Is Any Amount Safe?
-            <i>Trends in Cognitive Sciences</i>, 20(2), 80-82.
-          </blockquote>
-          <blockquote>
-            Coles, C.D., et al. (2015). Dose and Timing of Prenatal Alcohol
-            Exposure and Maternal Nutritional Supplements: Developmental Effects
-            on 6-Month-Old Infants. <i>Maternal and Child Health Journal</i>,
-            20(2), 19(12), 2605-2614.
-          </blockquote>
-          <blockquote>
-            Lebel, C., et al. (2012). A Longitudinal Study of the Long-term
-            Consequences of Drinking During Pregnancy: Heavy in Utero Alcohol
-            Exposure Disrupts the Normal Processes of Brain Development.
-            <i
-              >The Journal of Neuroscience: The Official Journal of the Study of
-              Neuroscience</i
-            >, 32(44), 15243-15251.
-          </blockquote>
-          <blockquote>
-            May, P. A. & Gossage, J.P. (2011).Maternal Risk Factors for Fetal
-            Alcohol Spectrum Disorders: Not as Simple As it Might Seem.
-            <i
-              >Alcohol Research & Health, NIH: National Institute on Alcohol
-              Abuse and Alcoholism</i
-            >, 34(1), 15-26.
-          </blockquote>
-          <blockquote>
-            May, P.A., et al. (2014). Prevalence and Characteristics of Fetal
-            Alcohol Spectrum Disorders. <i>PEDIATRICS</i>, 134(5), 855-866.
-          </blockquote>
-          <blockquote>
-            Ramsay, M. (2010). Genetic and Epigenetic Insights into Fetal
-            Alcohol Spectrum Disorder. <i>Genome Med</i>, 2(4), 27.
-          </blockquote>
-          <blockquote>
-            Shaid, A.R., Hosna, A.U., & Alam, A. (2012). Pregnancy and
-            Nutrition. <i>Bangladesh Journal of Medical Science</i>, 11(4),
-            267-272.
-          </blockquote>
-        </div>
-      </div>
     </div>
 
-    <footer>
-      <!-- footer-->
-      <div class="small-print">
-        <div class="container">
-          <div class="footer-content-1">
-            <p class="footer">
-              <a href="https://www.nofas.org/">NOFAS.org</a> |
-              <a href="https://www.nofas.org/contact/"> Contact</a>
-            </p>
-            <!-- <p>Content Developer - Samantha Di Paola</p> -->
-          </div>
-          <div class="footer-content-2">
-            <p>Copyright &copy; NOFAS.org 2017</p>
-            <p style="color: transparent;">
-              Application Developer & Designer - Pol Ajazi
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- Part8 - Footer Style -->
-      <style>
-        .small-print {
-          margin-top: 2em;
-          background-color: #242729;
-          color: #fff;
-          padding: 30px 0;
-        }
-        footer a {
-          color: #fff !important;
-          text-decoration: undeline;
-        }
-        footer a:hover {
-          text-decoration: underline;
-        }
-        .footer-content-1,
-        .footer-content-2 {
-          display: flex;
-          justify-content: space-between;
-        }
-      </style>
-    </footer>
-  </body>
+    <footer> <!-- footer-->
+        <div class="small-print">
+        	<div class="container">
+                <div class='footer-content-1'>
+            		<p class='footer'><a href="https://www.nofas.org/">NOFAS.org</a> | <a href="https://www.nofas.org/contact/"> Contact</a></p>
+                    <p>Project Lead & Content Developer - Samantha Di Paola</p>
+                </div>
+                <div class='footer-content-2'>
+        		  <p>Copyright &copy; NOFAS.org 2017 </p>
+                  <p style="color: #242729">Application Developer & Designer - Pol Ajazi</p>
+                </div>
+        	</div>
+        </div>  
+        <!-- Part8 - Footer Style -->
+        <style>
+            .small-print{margin-top:2em;background-color:#242729;color:#FFF;padding:30px 0}footer a{color:#fff!important;text-decoration:undeline}footer a:hover{text-decoration:underline}.footer-content-1,.footer-content-2{display:flex;justify-content:space-between}
+        </style>
+	</footer>
 
-  <!-- Home Modal -->
-  <div id="infoModal" class="modal fade" role="dialog">
+</body>
+
+<!-- Home Modal -->
+<div id="infoModal" class="modal fade" role="dialog">
     <!-- Part5 - Home Modal + Checkbox Style -->
     <style>
-      .disclaimer {
-        font-size: 2.2em;
-      }
-      .checkBoxObject {
-        padding-top: 2em;
-        padding-bottom: 2em;
-      }
-      .checkBoxLabel {
-        display: block;
-        position: relative;
-        cursor: pointer;
-        user-select: none;
-      }
-      .checkBoxLabel input {
-        position: absolute;
-        opacity: 0;
-      }
-      .checkmark {
-        position: absolute;
-        top: 0.5em;
-        left: -1em;
-        height: 25px;
-        width: 25px;
-        background-color: #eee;
-        border: 1.5px solid #000;
-      }
-      .checkBoxLabel:hover input ~ .checkmark {
-        background-color: #ccc;
-      }
-      .checkBoxLabel input:checked ~ .checkmark {
-        background-color: #2196f3;
-      }
-      .checkmark:after {
-        content: '';
-        position: absolute;
-        display: none;
-      }
-      .checkBoxLabel input:checked ~ .checkmark:after {
-        display: block;
-      }
-      .checkBoxLabel .checkmark:after {
-        left: 8.3px;
-        top: 0;
-        width: 0.5em;
-        height: 1.45em;
-        border: solid #fff;
-        border-width: 0 3px 3px 0;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
-      }
-      #validationCheckbox {
-        margin-top: 1em;
-      }
+        .disclaimer{font-size:2.2em}.checkBoxObject{padding-top:2em;padding-bottom:2em}.checkBoxLabel{display:block;position:relative;cursor:pointer;user-select:none}.checkBoxLabel input{position:absolute;opacity:0}.checkmark{position:absolute;top:.5em;left:-1em;height:25px;width:25px;background-color:#eee;border:1.5px solid #000}.checkBoxLabel:hover input~.checkmark{background-color:#ccc}.checkBoxLabel input:checked~.checkmark{background-color:#2196F3}.checkmark:after{content:"";position:absolute;display:none}.checkBoxLabel input:checked~.checkmark:after{display:block}.checkBoxLabel .checkmark:after{left:8.3px;top:0;width:.5em;height:1.45em;border:solid #fff;border-width:0 3px 3px 0;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}#validationCheckbox{margin-top:1em}
     </style>
     <div class="modal-dialog modal-lg">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            &times;
-          </button>
-          <h3 class="modal-title disclaimer">Disclaimer</h3>
+    <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title disclaimer">Disclaimer</h3>
+            </div>
+            <div class="modal-body">
+                <p style="padding-top: 0.3em">The information contained in this website and provided by the alcohol and pregnancy risk calculator is intended for informational purposes only, and should not be construed as medical or healthcare advice on any matter.</p>
+                <h4 style="padding-top: 0.3em">No Medical Advice Intended:</h4>
+                <p style="padding-top: 0.1em">This website includes general health information about conceptual, prenatal, and neonatal issues. Such content is for informational purposes only and may not reflect the most current developments. These informational materials are not intended, and should not be taken, as medical or healthcare advice on any particular set of facts or circumstances. You should contact a medical or healthcare professional for advice on specific issues. </p>
+                <p>The alcohol and pregnancy risk calculator gives a generalized estimate based on the responses you provide. The information may not be accurate for an individual person. There may be specific factors that are not measured. Therefore, any information provided to you should not be used to make healthcare decisions or changes. Please discuss your circumstances with your healthcare provider(s). </p>
+                <p>The National Organization on Fetal Alcohol Syndrome, Inc. (<a href="https://www.nofas.org/">NOFAS</a>) disclaims all liability in respect to actions taken or not taken based on any or all the contents of this site to the fullest extent permitted by law. Do not act or refrain from acting upon this information without seeking professional advice.</p>
+                <p>The Site contains links to other sites operated by third parties, and NOFAS do not guarantee the representation about any Third Party Site or the accuracy of its content.</p>
+                <h4 style="padding-top: 0.3em">Copyright Notice:  </h4>
+                <p style="padding-top: 0.1em">The copyright in these pages (including without limitation all text, graphics and computer code relating thereto or associated therewith) and all other intellectual property and proprietary rights therein belongs to NOFAS and all rights are reserved.</p>
+                <p>By using this application and its content, you accept and agree to be bound by the following terms and conditions.</p>
+                <p>You agree to indemnify, defend, and hold NOFAS, its directors, officers, affiliates, agents, and licensors harmless from and against any and all liability, losses, damages, and cost, including without limitation, reasonable attorney’s fees and costs, incurred in connection with any claim arising from your use of this application or its content.</p>
+                <hr>
+                <div class="row checkBoxObject">
+                    <!-- col-xs-8 --><div class="col-xs-1"></div>  
+                    <label class="checkbox-inline col-xs-10 checkBoxLabel">
+                        <input type="checkbox" id="validationCheckbox" value="option1"> 
+                        You agree to indemnify, defend, and hold NOFAS, its directors, officers, affiliates, agents, and licensors harmless from and against any and all liability, losses, damages, and cost, including without limitation, reasonable attorney’s fees and costs, incurred in connection with any claim arising from your use of this application or its content.
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer assessmentEnabler">
+                <div class="col-xs-12 row">
+                    <div class="col-xs-2"></div>
+                    <button type="button" class="btn btn-danger col-xs-3 buttonAccess" data-dismiss="modal" id='b1' style="margin-right: 7em">Return</button>
+                    <button type="button" class="btn btn-info col-xs-3 buttonAccess" data-dismiss="modal" id='homeAway'>Proceed</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <p style="padding-top: 0.3em;">
-            The information contained in this website and provided by the
-            alcohol and pregnancy risk calculator is intended for informational
-            purposes only, and should not be construed as medical or healthcare
-            advice on any matter.
-          </p>
-          <h4 style="padding-top: 0.3em;">No Medical Advice Intended:</h4>
-          <p style="padding-top: 0.1em;">
-            This website includes general health information about conceptual,
-            prenatal, and neonatal issues. Such content is for informational
-            purposes only and may not reflect the most current developments.
-            These informational materials are not intended, and should not be
-            taken, as medical or healthcare advice on any particular set of
-            facts or circumstances. You should contact a medical or healthcare
-            professional for advice on specific issues.
-          </p>
-          <p>
-            The alcohol and pregnancy risk calculator gives a generalized
-            estimate based on the responses you provide. The information may not
-            be accurate for an individual person. There may be specific factors
-            that are not measured. Therefore, any information provided to you
-            should not be used to make healthcare decisions or changes. Please
-            discuss your circumstances with your healthcare provider(s).
-          </p>
-          <p>
-            The National Organization on Fetal Alcohol Syndrome, Inc. (<a
-              href="https://www.nofas.org/"
-              >NOFAS</a
-            >) disclaims all liability in respect to actions taken or not taken
-            based on any or all the contents of this site to the fullest extent
-            permitted by law. Do not act or refrain from acting upon this
-            information without seeking professional advice.
-          </p>
-          <p>
-            The Site contains links to other sites operated by third parties,
-            and NOFAS do not guarantee the representation about any Third Party
-            Site or the accuracy of its content.
-          </p>
-          <h4 style="padding-top: 0.3em;">Copyright Notice:</h4>
-          <p style="padding-top: 0.1em;">
-            The copyright in these pages (including without limitation all text,
-            graphics and computer code relating thereto or associated therewith)
-            and all other intellectual property and proprietary rights therein
-            belongs to NOFAS and all rights are reserved.
-          </p>
-          <p>
-            By using this application and its content, you accept and agree to
-            be bound by the following terms and conditions.
-          </p>
-          <p>
-            You agree to indemnify, defend, and hold NOFAS, its directors,
-            officers, affiliates, agents, and licensors harmless from and
-            against any and all liability, losses, damages, and cost, including
-            without limitation, reasonable attorney’s fees and costs, incurred
-            in connection with any claim arising from your use of this
-            application or its content.
-          </p>
-          <hr />
-          <div class="row checkBoxObject">
-            <!-- col-xs-8 -->
-            <div class="col-xs-1"></div>
-            <label class="checkbox-inline col-xs-10 checkBoxLabel">
-              <input type="checkbox" id="validationCheckbox" value="option1" />
-              You agree to indemnify, defend, and hold NOFAS, its directors,
-              officers, affiliates, agents, and licensors harmless from and
-              against any and all liability, losses, damages, and cost,
-              including without limitation, reasonable attorney’s fees and
-              costs, incurred in connection with any claim arising from your use
-              of this application or its content.
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
-        <div class="modal-footer assessmentEnabler">
-          <div class="col-xs-12 row">
-            <div class="col-xs-2"></div>
-            <button
-              type="button"
-              class="btn btn-danger col-xs-3 buttonAccess"
-              data-dismiss="modal"
-              id="b1"
-              style="margin-right: 7em;"
-            >
-              Return
-            </button>
-            <button
-              type="button"
-              class="btn btn-info col-xs-3 buttonAccess"
-              data-dismiss="modal"
-              id="homeAway"
-            >
-              Proceed
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <!-- BMI Modal -->
-  <div id="bmiModal" class="modal fade" role="dialog">
+
+<!-- BMI Modal -->
+<div id="bmiModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            &times;
-          </button>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe src="https://bmicalculatorusa.com/widgets/widget.php?t=550x480" width="550" height="480" frameborder="0"></iframe><p style=" font-family: sans-serif; font-size: 14px">Supplied by <a style="color: #3d4195;" href="https://bmicalculatorusa.com">BMI Calculator USA</a></p>
+            </div>
+            <div class="modal-footer">
+                <div class="col-sm-4"></div>
+                <button type="button text-center" class="btn btn-info col-sm-3" data-dismiss="modal">I Got it</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <iframe
-            src="https://bmicalculatorusa.com/widgets/widget.php?t=550x480"
-            width="550"
-            height="480"
-            frameborder="0"
-          ></iframe>
-          <p style="font-family: sans-serif; font-size: 14px;">
-            Supplied by
-            <a style="color: #3d4195;" href="https://bmicalculatorusa.com"
-              >BMI Calculator USA</a
-            >
-          </p>
-        </div>
-        <div class="modal-footer">
-          <div class="col-sm-4"></div>
-          <button
-            type="button text-center"
-            class="btn btn-info col-sm-3"
-            data-dismiss="modal"
-          >
-            I Got it
-          </button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <!-- Parental Conscent Modal -->
-  <div id="paModal" class="modal fade" role="dialog">
+
+<!-- Parental Conscent Modal -->
+<div id="paModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            &times;
-          </button>
-          <h3 class="modal-title">Pregnancy & Alcohol</h3>
+    <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Pregnancy & Alcohol</h3>
+            </div>
+            <div class="modal-body">
+                <p>The National Institute on Alcohol Abuse and Alcoholism (NIAAA) and the Substance Abuse and Mental Health Services Administration (SAMHSA) define binge drinking as 4 or more drinks on one occasion for women. According to the U.S. Department of Health and Human Services (HHS), moderate drinking is up to 1 drink per day for women.</p>
+                <strong style="font-size: 1.1em">The U.S. Surgeon General advices women to not drink while they are pregnant.</strong>
+            </div>
+            <div class="modal-footer">
+                <div class="col-sm-4"></div>
+                <button type="button text-center" class="btn btn-info col-sm-3" data-dismiss="modal" id='page3checkpoint'>I Understand</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <p>
-            The National Institute on Alcohol Abuse and Alcoholism (NIAAA) and
-            the Substance Abuse and Mental Health Services Administration
-            (SAMHSA) define binge drinking as 4 or more drinks on one occasion
-            for women. According to the U.S. Department of Health and Human
-            Services (HHS), moderate drinking is up to 1 drink per day for
-            women.
-          </p>
-          <strong style="font-size: 1.1em;"
-            >The U.S. Surgeon General advices women to not drink while they are
-            pregnant.</strong
-          >
-        </div>
-        <div class="modal-footer">
-          <div class="col-sm-4"></div>
-          <button
-            type="button text-center"
-            class="btn btn-info col-sm-3"
-            data-dismiss="modal"
-            id="page3checkpoint"
-          >
-            I Understand
-          </button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <!-- Result  Modal -->
-  <div id="resultModal" class="modal fade" role="dialog">
+<!-- Result  Modal -->
+<div id="resultModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            &times;
-          </button>
-          <h3 class="modal-title">Risk Calculator Results</h3>
+    <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Risk Calculator Results</h3>
+            </div>
+            <div class="modal-body">
+                <h4>Important Note:</h4>
+                <p>
+                    This calculator does not guarantee a certain risk level for your child having FASD because physiological functions vary person to person. This information is intended to encourage you to make healthy decisions for the remainder of your pregnancy and connect to resources if you need help to stop drinking while pregnant.</p>
+                <p>
+                    Speak to a medical professional about any concerns that you may have regarding your pregnancy.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <div class="col-sm-4"></div>
+                <button type="button text-center" class="btn btn-info col-sm-3" data-dismiss="modal" id='displayResults'>I Understand</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <h4>Important Note:</h4>
-          <p>
-            This calculator does not guarantee a certain risk level for your
-            child having FASD because physiological functions vary person to
-            person. This information is intended to encourage you to make
-            healthy decisions for the remainder of your pregnancy and connect to
-            resources if you need help to stop drinking while pregnant.
-          </p>
-          <p>
-            Speak to a medical professional about any concerns that you may have
-            regarding your pregnancy.
-          </p>
-        </div>
-        <div class="modal-footer">
-          <div class="col-sm-4"></div>
-          <button
-            type="button text-center"
-            class="btn btn-info col-sm-3"
-            data-dismiss="modal"
-            id="displayResults"
-          >
-            I Understand
-          </button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <!-- Part9 - Screen Compatibility Style -->
-  <style>
-    @media (max-width: 553px) {
-      .footer-content-1,
-      .footer-content-2 {
-        display: block !important;
-      }
-    }
-    @media (max-width: 376px) {
-      #lineBreak::before {
-        content: '\A';
-      }
-    }
-    @media (max-width: 452px) {
-      #pageTitleContainerAlt {
-        display: block !important;
-      }
-      #pageTitleContainer {
-        display: none !important;
-      }
-      #title2 {
-        line-height: 1.6em;
-      }
-      #toBlack {
-        line-height: 1.2em;
-        margin-top: -0.4em;
-      }
-    }
-    @media (max-width: 374px) {
-      .risk-title {
-        font-size: 0.8em !important;
-      }
-    }
-    @media (max-width: 376px) {
-      #pageTitleContainerAlt {
-        display: none !important;
-      }
-      #pageTitleContainerAlt2 {
-        display: block !important;
-        margin-top: -0.3em;
-      }
-      #title3 {
-        line-height: 1.4em;
-      }
-      #title2 {
-        margin-top: -0.7em;
-      }
-      #toBlack {
-        padding-top: 0.5em !important;
-      }
-    }
-    @media (max-width: 992px) {
-      .resultLogo {
-        display: none;
-      }
-    }
-    @media (max-width: 768px) {
-      nav > div > div > a > i {
-        margin-top: -5px !important;
-      }
-      #risk-title {
-        margin-top: 2em !important;
-      }
-      #giveMarginBelow768px {
-        margin-top: 1.5em !important;
-      }
-      .leftCont,
-      .midCont,
-      .rightCont {
-        padding-top: 1.2em !important;
-      }
-      .homeTent {
-        margin-top: -6em !important;
-      }
-      .NofasLogo {
-        margin-top: -2.3em !important;
-        margin-left: -7em !important;
-      }
-      .navbarIntegrity {
-        display: flex;
-        justify-content: space-between;
-      }
-      .fa-sun-o {
-        margin-top: 0.3em !important;
-        margin-right: -3em !important;
-      }
-    }
-    @media only screen and (max-width: 991px) {
-      .homeButton {
-        display: none;
-      }
-      .homeButtonAlt {
-        display: block;
-      }
-    }
-    @media (max-width: 767px) and (min-width: 425px) {
-      .homeButtonAlt {
-        display: none;
-      }
-      .homeButton {
-        display: block;
-      }
-    }
-    @media (max-width: 391px) {
-      #b1 {
-        margin-right: 4em !important;
-      }
-    }
-  </style>
+
+<!-- Part9 - Screen Compatibility Style -->
+<style>
+@media(max-width:553px){.footer-content-1,.footer-content-2{display:block!important}}@media(max-width:376px){#lineBreak::before{content:'\A'}}@media (max-width:452px){#pageTitleContainerAlt{display:block!important}#pageTitleContainer{display:none!important}#title2{line-height:1.6em}#toBlack{line-height:1.2em;margin-top:-.4em}}@media (max-width:374px){.risk-title{font-size:.8em!important}}@media (max-width:376px){#pageTitleContainerAlt{display:none!important}#pageTitleContainerAlt2{display:block!important;margin-top:-.3em}#title3{line-height:1.4em}#title2{margin-top:-.7em}#toBlack{padding-top:.5em!important}}@media (max-width:992px){.resultLogo{display:none}}@media (max-width:768px){nav>div>div>a>i{margin-top:-5px!important}#risk-title{margin-top:2em!important}#giveMarginBelow768px{margin-top:1.5em!important}.leftCont,.midCont,.rightCont{padding-top:1.2em!important}.homeTent{margin-top:-6em!important}.NofasLogo{margin-top:-2.3em!important;margin-left:-7em!important}.navbarIntegrity{display:flex;justify-content:space-between}.fa-sun-o{margin-top:.3em!important;margin-right:-3em!important}}@media only screen and (max-width:991px){.homeButton{display:none}.homeButtonAlt{display:block}}@media (max-width:767px) and (min-width:425px){.homeButtonAlt{display:none}.homeButton{display:block}}@media(max-width:391px){#b1{margin-right:4em!important}}
+</style>
+
+
 </html>
