@@ -1,0 +1,24 @@
+{
+  "name": "NOFAS_risk-calculator",
+  "version": "1.0.0",
+  "description": "An application for the NOFAS organization that surveys women regarding their drinking and other problems during their pregnancy, and displays cautioning information and follow up actions based on their choices. The application uses JavaScript to validate user choices, with the help of jQuery, and display a range of result choices weighted by the scaled by the weight of the questions.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thunderspike/NOFAS_risk-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thunderspike/NOFAS_risk-calculator/issues"
+  },
+  "homepage": "https://github.com/Thunderspike/NOFAS_risk-calculator#readme",
+  "dependencies": {
+    "node-static": "^0.7.11"
+  }
+}
